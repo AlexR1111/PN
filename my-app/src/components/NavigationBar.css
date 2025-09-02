@@ -1,6 +1,6 @@
 
 .nav-bar {
-  background-color: #1230AE;
+  background-color: #14235c;
   padding: 1rem;
 }
 
@@ -16,8 +16,14 @@
   color: #FFF7F7;
   text-decoration: none;
   font-weight: bold;
+  transition: color 0.3s ease;
 }
 
 .nav-bar a:hover {
   color: #C68FE6;
+}
+
+.nav-bar a.active {
+  color: #6c48c5;
+  border-bottom: 2px solid #c68fe6;
 }
