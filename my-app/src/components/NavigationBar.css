@@ -18,7 +18,7 @@
 }
 
 .nav-bar a {
-  font-family: 'Uncial Antiqua', serif;
+  font-family: 'MedievalSharp', cursive;
   text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
   color: #FFF7F7;
   text-decoration: none;
@@ -27,12 +27,12 @@
 }
 
 .nav-bar a:hover {
-  color: #C68FE6;
+  color: #483AA0;
   transform: translateY(-2px);
   text-shadow: 0 0 50px #000000;
 }
 
 .nav-bar a.active {
-  color: #a388e6;
+  color: #7965C1;
   text-shadow: 0 0 50px #000000;
 }

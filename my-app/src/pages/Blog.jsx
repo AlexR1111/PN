@@ -1,6 +1,8 @@
 import React from 'react';
 import './PageStyles.css';
 import {motion} from 'framer-motion';
+import { Link } from 'react-router-dom';
+import { blogPosts } from '../components/blogData';
 
 const Blog = () => (
     <motion.div
@@ -13,8 +15,13 @@ const Blog = () => (
         <h1>Blog</h1>
         <p>Deep thinking with the deep</p>
         <div className="blog-preview">
-            <h3>Kennst du Oleg?</h3>
-            <p>OlegmirdochdieEier kekw</p>
+            {blogPosts.map(post => (
+                <div key={post.id}>
+                    <h2>{post.title}</h2>
+                    <p>{post.date}</p>
+                    <Link to={`/blog/${post.id}`}>Beitrag lesen</Link>
+                </div>
+            ))}
         </div>
     </motion.div>
 );

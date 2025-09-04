@@ -1,0 +1,12 @@
+.footer-content {
+    background-image: url('../images/parchment-texture.jpg');
+    background-blend-mode: multiply;
+    background-color: #14235c;
+    color: #fdf6e3;
+    padding: 2rem;
+    text-align: center;
+    font-family: 'MedievalSharp', cursive;
+    box-shadow: 0 -4px 12px rgba(0,0,0,0.3);
+    border-top: 4px double #6e4ac9;
+    
+}

@@ -24,7 +24,7 @@ export default function ScrollToTopButton() {
                 onClick={scrollToTop}
                 aria-label="Scroll to top"
             >
-            ⏫
+            🔝
             </button> 
         )
     );

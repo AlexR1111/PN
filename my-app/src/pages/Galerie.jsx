@@ -4,14 +4,25 @@ import Lightbox from 'yet-another-react-lightbox';
 import 'yet-another-react-lightbox/styles.css';
 import { motion } from 'framer-motion';
 
+
 const Galerie = () => {
   const [open, setOpen] = useState(false);
   const [index, setIndex] = useState(0);
 
-  const slides = [
+  const [theme, setTheme] = useState('mittelalter');
+ 
+
+  const medievalSlides = [
     { src: 'https://res.cloudinary.com/dzlpy6osa/image/upload/visitencarte_back_ggzo4f' },
     { src: 'https://res.cloudinary.com/dzlpy6osa/image/upload/visitencarte_front_w2uxyg' },
   ];
+
+  const upcyclingSlides = [
+    { src: 'https://res.cloudinary.com/dzlpy6osa/image/upload/visitencarte_back_ggzo4f' },
+    { src: 'https://res.cloudinary.com/dzlpy6osa/image/upload/visitencarte_front_w2uxyg' },
+  ];
+
+   const slides = theme ==='mittelalter' ? medievalSlides : upcyclingSlides;
 
   const handleClick = (i) => {
     setIndex(i);
@@ -34,6 +45,22 @@ const Galerie = () => {
       transition={pageTransition.transition}
     >
       <h1>Galerie</h1>
+      <div className="theme-toggle">
+  <button
+    className={theme === 'mittelalter' ? 'active' : ''}
+    onClick={() => setTheme('mittelalter')}
+  >
+    ⚔️ Mittelalter
+  </button>
+
+  <button
+    className={theme === 'upcycling' ? 'active' : ''}
+    onClick={() => setTheme('upcycling')}
+  >
+    ♻️ Upcycling
+  </button>
+</div>
+
       <p>Road work ahead? I sure hope it does</p>
 
       <div className="gallery-grid">
