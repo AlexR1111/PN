@@ -1,0 +1,19 @@
+🔧 Technische Umsetzung
+Frontend erfolgreich auf Vercel deployed Die React-App läuft stabil auf Vercel. Navigation, Galerie, Blog und Kontaktformular sind integriert.
+
+Schriftarten angepasst Einheitliches Schriftbild für Menü, Überschriften und Fließtext – passend zum Branding.
+
+Blogsystem eingerichtet Erste Beiträge erstellt und Blogseite ins Hauptmenü eingebunden. Markdown-Struktur vorbereitet.
+
+Barrierefreiheit geprüft Fehlendes lang-Attribut im <html>-Tag identifiziert. Lösung besprochen und für nächsten Sprint eingeplant.
+
+Footer hinzugefügt Copyright-Hinweis und Branding im Footer integriert: ©⚜️ 2025 Pia’s Nähstube – Alle Rechte vorbehalten ⚜️
+
+Meta-Tags ergänzt Basis-SEO eingerichtet: Titel, Beschreibung, Keywords und Favicon im <head>-Bereich eingebunden.
+
+Galerie-Button für Kategorien erstellt Zwei Buttons („⚔️ Mittelalter“ & „♻️ Upcycling“) vorbereitet, um Bilder später nach Themen zu filtern und anzuzeigen.
+
+🎨 Design & Inhalte
+Visitenkarten-Designs gesichtet Front- und Rückseite im Drive-Ordner bereitgestellt. Abstimmung mit Pia erfolgt.
+
+Layout-Feinschliff Menüstruktur mit ⚜️-Symbolen abgestimmt. Platzhaltertexte für „Willkommen“ und „Über Mich“ eingefügt.
