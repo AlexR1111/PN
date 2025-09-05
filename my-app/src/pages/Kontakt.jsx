@@ -31,7 +31,7 @@ const Kontakt = () => {
     setLoading(true);
 
     try {
-      const response = await fetch('http://localhost:5000/send', {
+      const response = await fetch('https://pn-d89f.onrender.com/api/sendMail', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
@@ -40,7 +40,7 @@ const Kontakt = () => {
       const result = await response.json();
       if (result.success) {
         toast.success('✅ Nachricht erfolgreich gesendet!');
-        setFormData({ name: '', message: '' });
+        setFormData({ name: '', message: '', email: '' });
 
         setTimeout(() => {
           navigate('/danke');
