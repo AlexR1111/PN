@@ -15,7 +15,8 @@ const pageTransition = {
 const Kontakt = () => {
   const [formData, setFormData] = useState({
     name: '',
-    message: ''
+    message: '',
+    email:''
   });
 
   const [loading, setLoading] = useState(false);
@@ -74,6 +75,14 @@ const Kontakt = () => {
           onChange={handleChange}
           required
         />
+        <input
+          type="email"
+          name="email"
+          placeholder='Email'
+          value={formData.email}
+          onChange={handleChange}
+          required
+          />
         <textarea
           name="message"
           placeholder="Nachricht"
