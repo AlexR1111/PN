@@ -1,16 +1,21 @@
 {
-  "headers": [
-    {
-      "source": "/site-manifest.json",
-      "headers": [
-        { "key": "Content-Type", "value": "application/json" }
-      ]
-    }
-  ],
   "builds": [
     {
       "src": "package.json",
       "use": "@vercel/static-build"
     }
-  ]
+  ],
+  "headers": [
+    {
+      "source": "/site-manifest.json",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/json"
+        }
+      ]
+    }
+  ],
+  "cleanUrls": true,
+  "trailingSlash": false
 }
