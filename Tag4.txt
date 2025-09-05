@@ -17,3 +17,4 @@ Galerie-Button für Kategorien erstellt Zwei Buttons („⚔️ Mittelalter“ &
 Visitenkarten-Designs gesichtet Front- und Rückseite im Drive-Ordner bereitgestellt. Abstimmung mit Pia erfolgt.
 
 Layout-Feinschliff Menüstruktur mit ⚜️-Symbolen abgestimmt. Platzhaltertexte für „Willkommen“ und „Über Mich“ eingefügt.
+
