@@ -34,7 +34,7 @@ const Kontakt = () => {
       const response = await fetch('https://pn-d89f.onrender.com/api/sendMail', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({name, email, message}),
       });
 
       const result = await response.json();
