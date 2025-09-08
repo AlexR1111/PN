@@ -36,14 +36,13 @@ app.post('/api/sendMail', async (req, res) => {
   const { name, email, message } = req.body;
 
   const transporter = nodemailer.createTransport({
-    host: 'mail.gmx.net',
-    port: 587,
-    secure: false,
-    auth: {
-      user: process.env.EMAIL_USER,
-      pass: process.env.EMAIL_PASS,
-    },
-  });
+  host: "sandbox.smtp.mailtrap.io",
+  port: 2525,
+  auth: {
+    user: "858527d79c42ae",
+    pass: "****795a"
+  }
+});
 
   const mailOptions = {
     from: process.env.EMAIL_USER,
