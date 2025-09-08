@@ -25,7 +25,7 @@ app.use(cors({
 app.use(express.json());
 
 app.post('/api/sendMail', async (req, res) => {
-    const {name, message} = req.body;
+    const {name, email ,message} = req.body;
 
     const transporter = nodemailer.createTransport({
         host: 'mail.gmx.net',
@@ -40,7 +40,7 @@ app.post('/api/sendMail', async (req, res) => {
     const mailOptions = {
         from: process.env.EMAIL_USER,
         to: process.env.EMAIL_USER,
-        subject: `Neue Nachricht von ${name || 'Webseit-Besucher'}`,
+        subject: `Neue Nachricht von ${name || 'Webseit-Besucher'}, ${email}`,
         text: `Nachricht:\n\n${message}`,
     };
 
@@ -53,4 +53,5 @@ app.post('/api/sendMail', async (req, res) => {
     }
 });
 
-app.listen(5000, () => console.log('Server läuft auf Port 5000'));
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => console.log(`Server läuft auf Port ${PORT}`));
