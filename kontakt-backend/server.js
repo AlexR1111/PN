@@ -30,19 +30,19 @@ app.use(cors({
 app.post('/api/sendMail', async (req, res) => {
   console.log("📨 Anfrage erhalten");
   console.log("req.body:", req.body);
-  console.log("EMAIL_USER:", process.env.EMAIL_USER);
-  console.log("EMAIL_PASS Länge:", process.env.EMAIL_PASS?.length);
+
 
   const { name, email, message } = req.body;
 
   const transporter = nodemailer.createTransport({
   host: "sandbox.smtp.mailtrap.io",
-  port: 2525,
+  port: 587,
   auth: {
-    user: "858527d79c42ae",
-    pass: "****795a"
+    user: process.env.MAILTRAP_USER,
+    pass: process.env.MAILTRAP_PASS
   }
 });
+
 
   const mailOptions = {
     from: process.env.EMAIL_USER,
