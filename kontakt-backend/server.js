@@ -45,7 +45,7 @@ app.post('/api/sendMail', async (req, res) => {
 
   const mailOptions = {
     from: process.env.EMAIL_USER,
-    to: "inbox@piasnaehstube.de",
+    to: "PiasNaehstube@gmx.de",
     subject: `Neue Nachricht von ${name || 'Webseiten-Besucher'}, ${email}`,
     text: `Nachricht:\n\n${message}`,
   };
