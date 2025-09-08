@@ -15,8 +15,9 @@ const pageTransition = {
 const Kontakt = () => {
   const [formData, setFormData] = useState({
     name: '',
-    message: '',
-    email:''
+    email:'',
+    message: ''
+    
   });
 
   const [loading, setLoading] = useState(false);

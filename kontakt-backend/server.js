@@ -1,19 +1,17 @@
 const express = require('express');
 const nodemailer = require('nodemailer');
-const cors = require ('cors');
+const cors = require('cors');
 require('dotenv').config();
 
 const app = express();
 
-console.log("📨 Anfrage erhalten");
-console.log("req.body:", req.body);
-console.log("EMAIL_USER:", process.env.EMAIL_USER);
-console.log("EMAIL_PASS Länge:", process.env.EMAIL_PASS?.length);
-
+// Middleware
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 const allowedOrigins = [
-    'http://localhost:3000',
-    'https://piasnaehstube.vercel.app'
+  'http://localhost:3000',
+  'https://piasnaehstube.vercel.app'
 ];
 
 app.use(cors({
@@ -28,39 +26,43 @@ app.use(cors({
   allowedHeaders: ['Content-Type', 'Authorization']
 }));
 
-app.use(express.json());
-
+// 📨 Mailversand-Route
 app.post('/api/sendMail', async (req, res) => {
-    const {name, email ,message} = req.body;
+  console.log("📨 Anfrage erhalten");
+  console.log("req.body:", req.body);
+  console.log("EMAIL_USER:", process.env.EMAIL_USER);
+  console.log("EMAIL_PASS Länge:", process.env.EMAIL_PASS?.length);
 
-    console.log("EMAIL_USER:", process.env.EMAIL_USER);
-    console.log("EMAIL_PASS Länge:", process.env.EMAIL_PASS?.length);
+  const { name, email, message } = req.body;
 
-    const transporter = nodemailer.createTransport({
-        host: 'mail.gmx.net',
-        port: 587,
-        secure: false,
-        auth: {
-            user: process.env.EMAIL_USER,
-            pass: process.env.EMAIL_PASS,
-        },
-    });
+  const transporter = nodemailer.createTransport({
+    host: 'mail.gmx.net',
+    port: 587,
+    secure: false,
+    auth: {
+      user: process.env.EMAIL_USER,
+      pass: process.env.EMAIL_PASS,
+    },
+  });
 
-    const mailOptions = {
-        from: process.env.EMAIL_USER,
-        to: process.env.EMAIL_USER,
-        subject: `Neue Nachricht von ${name || 'Webseit-Besucher'}, ${email}`,
-        text: `Nachricht:\n\n${message}`,
-    };
+  const mailOptions = {
+    from: process.env.EMAIL_USER,
+    to: process.env.EMAIL_USER,
+    subject: `Neue Nachricht von ${name || 'Webseiten-Besucher'}, ${email}`,
+    text: `Nachricht:\n\n${message}`,
+  };
 
-    try {
-        await transporter.sendMail(mailOptions);
-        res.status(200).json({success:true,message:'Email gesendet!'});
-    } catch (error) {
-        console.error(error);
-        res.status(500).json({success:false,message:'Fehler beim Senden.'});
-    }
+  try {
+    await transporter.sendMail(mailOptions);
+    console.log("✅ Mail erfolgreich versendet");
+    res.status(200).json({ success: true, message: 'Email gesendet!' });
+  } catch (error) {
+    console.error("❌ Fehler beim Mailversand:", error.message);
+    console.error("🧵 Stacktrace:", error.stack);
+    res.status(500).json({ success: false, message: 'Fehler beim Senden.' });
+  }
 });
 
+// Server starten
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`Server läuft auf Port ${PORT}`));
+app.listen(PORT, () => console.log(`🚀 Server läuft auf Port ${PORT}`));
