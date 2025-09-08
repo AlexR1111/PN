@@ -4,15 +4,28 @@ const cors = require ('cors');
 require('dotenv').config();
 
 const app = express();
+
+const allowedOrigins = [
+    'http://localhost:3000',
+    'https://piasnaehstube.vercel.app'
+];
+
 app.use(cors({
-    origin:'https://piasnaehstube.vercel.app',
-    methods: ['POST', 'OPTIONS'],
-    credentials:true
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  methods: ['GET', 'POST', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
 }));
+
 app.use(express.json());
 
-app.post('/api/sendMail', async (req, res) => {
-    const {name, message, email} = req.body;
+app.post('/send', async (req, res) => {
+    const {name, message} = req.body;
 
     const transporter = nodemailer.createTransport({
         host: 'mail.gmx.net',
@@ -27,7 +40,6 @@ app.post('/api/sendMail', async (req, res) => {
     const mailOptions = {
         from: process.env.EMAIL_USER,
         to: process.env.EMAIL_USER,
-        replyTo: email,
         subject: `Neue Nachricht von ${name || 'Webseit-Besucher'}`,
         text: `Nachricht:\n\n${message}`,
     };
@@ -41,5 +53,4 @@ app.post('/api/sendMail', async (req, res) => {
     }
 });
 
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log('Server läuft auf Port ${PORT}'));
+app.listen(5000, () => console.log('Server läuft auf Port 5000'));
