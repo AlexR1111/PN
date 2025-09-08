@@ -31,26 +31,24 @@ app.post('/api/sendMail', async (req, res) => {
   console.log("📨 Anfrage erhalten");
   console.log("req.body:", req.body);
 
-
   const { name, email, message } = req.body;
 
   const transporter = nodemailer.createTransport({
-  host: "sandbox.smtp.mailtrap.io",
-  port: 587,
-  auth: {
-    user: process.env.MAILTRAP_USER,
-    pass: process.env.MAILTRAP_PASS
-  }
-});
-
+    host: "mail.gmx.net",
+    port: 587,
+    secure: false, // TLS wird automatisch verwendet
+    auth: {
+      user: process.env.EMAIL_USER,
+      pass: process.env.EMAIL_PASS  
+    }
+  });
 
   const mailOptions = {
-  from: "test@piasnaehstube.de",
-  to: "inbox@piasnaehstube.de",
-  subject: `Neue Nachricht von ${name || 'Webseiten-Besucher'}, ${email}`,
-  text: `Nachricht:\n\n${message}`,
-};
-
+    from: process.env.EMAIL_USER,
+    to: "inbox@piasnaehstube.de",
+    subject: `Neue Nachricht von ${name || 'Webseiten-Besucher'}, ${email}`,
+    text: `Nachricht:\n\n${message}`,
+  };
 
   try {
     await transporter.sendMail(mailOptions);
