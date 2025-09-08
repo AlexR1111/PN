@@ -26,6 +26,9 @@ app.use(express.json());
 
 app.post('/api/sendMail', async (req, res) => {
     const {name, email ,message} = req.body;
+    
+    console.log("EMAIL_USER:", process.env.EMAIL_USER);
+    console.log("EMAIL_PASS Länge:", process.env.EMAIL_PASS?.length);
 
     const transporter = nodemailer.createTransport({
         host: 'mail.gmx.net',
