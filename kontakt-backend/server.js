@@ -6,6 +6,7 @@ require('dotenv').config();
 const app = express();
 app.use(cors({
     origin:'https://piasnaehstube.vercel.app',
+    methods: ['POST', 'OPTIONS'],
     credentials:true
 }));
 app.use(express.json());
