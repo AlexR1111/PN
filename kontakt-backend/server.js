@@ -45,11 +45,12 @@ app.post('/api/sendMail', async (req, res) => {
 
 
   const mailOptions = {
-    from: process.env.EMAIL_USER,
-    to: process.env.EMAIL_USER,
-    subject: `Neue Nachricht von ${name || 'Webseiten-Besucher'}, ${email}`,
-    text: `Nachricht:\n\n${message}`,
-  };
+  from: "test@piasnaehstube.de",
+  to: "inbox@piasnaehstube.de",
+  subject: `Neue Nachricht von ${name || 'Webseiten-Besucher'}, ${email}`,
+  text: `Nachricht:\n\n${message}`,
+};
+
 
   try {
     await transporter.sendMail(mailOptions);
