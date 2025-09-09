@@ -1,7 +1,9 @@
 
 import './App.css';
+import React from 'react';
 import {AnimatePresence} from 'framer-motion';
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter, HashRouter, Routes, Route, useLocation } from 'react-router-dom';
+
 import NavigationBar from './components/NavigationBar';
 import Footer from './components/Footer';
 import ScrollToTopButton from './components/ScrollToTopButton';
@@ -14,6 +16,9 @@ import Blog from './pages/Blog';
 import Galerie from './pages/Galerie';
 import Danke from './pages/Danke';
 import NotFound from './pages/NotFound';
+
+const isLocalhost = window.location.hostname === 'localhost';
+const Router = isLocalhost ? BrowserRouter : HashRouter;
 
 function AnimatedRoutes() {
   const location = useLocation();
