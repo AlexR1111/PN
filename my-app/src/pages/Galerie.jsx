@@ -44,24 +44,24 @@ const Galerie = () => {
       exit={pageTransition.exit}
       transition={pageTransition.transition}
     >
-      <h1>Galerie</h1>
+      <h1>🖼️Galerie</h1>
       <div className="theme-toggle">
   <button
     className={theme === 'mittelalter' ? 'active' : ''}
     onClick={() => setTheme('mittelalter')}
   >
-    ⚔️ Mittelalter
+    Mittelalter
   </button>
 
   <button
     className={theme === 'upcycling' ? 'active' : ''}
     onClick={() => setTheme('upcycling')}
   >
-    ♻️ Upcycling
+    Upcycling
   </button>
 </div>
 
-      <p>Road work ahead? I sure hope it does</p>
+      <p>Komm doch herein, und schau dir meine Werke an.</p>
 
       <div className="gallery-grid">
         {slides.map((slide, i) => (

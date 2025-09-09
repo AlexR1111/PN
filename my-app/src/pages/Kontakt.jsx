@@ -65,8 +65,10 @@ const Kontakt = () => {
       exit={pageTransition.exit}
       transition={pageTransition.transition}
     >
-      <h1>Kontakt</h1>
-      <p>Hier meine Kontakte</p>
+      <h1>📯Kontakt</h1>
+      <p>Du hast Fragen,Ideen oder möchtest ein individuelles Nähprojekt in Auftrag geben?<br/>
+      Ich freue mich über deine Nachricht - ob es um Stoffe, Schnitte oder Sonderwünsche geht.<br/> 
+      Nutze gerne das Formular, um mir zu schreiben oder einen Auftrag anzufragen. </p>
       <form className="contact-form" onSubmit={handleSubmit}>
         <input
           type="text"
@@ -96,8 +98,14 @@ const Kontakt = () => {
         </button>
       </form>
       <ToastContainer position="bottom-right" autoClose={3000} />
+      <br/>
+      <p>Hinweis: Wenn du einen Auftrag erteilen möchtest, beschreibe bitte möglichst genau,<br/>
+       was du dir vorstellst - z.B. Art des Kleidungsstücks, Maße, Stoffwünsche oder Anlass.<br/> 
+       Ich melde mich schnellstmöglich mit einem Angebot zurück!</p>
     </motion.div>
   );
 };
+
+
 
 export default Kontakt;

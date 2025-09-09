@@ -13,6 +13,7 @@ body {
 
 
 
+
 .page {
     padding: 2rem;
     background: linear-gradient(135deg, rgba(18,48,174,0.1), rgba(30,61,220,0.2));
@@ -27,8 +28,8 @@ body {
 .page h1 {
     color: #fdf6e3;
     margin-bottom: 1rem;
-    font-size: 2.5rem;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+    font-size: 3.5rem;
+    text-shadow: 1px 1px 2px rgba(0,0,0,1);
 }
 
 .gallery-grid {
@@ -83,6 +84,7 @@ body {
     background-color: #fdf6e3;
     font-size: 1rem;
     transition: border-color 0.3s ease;
+    border-style: groove;
 }
 
 .contact-form input:focus,
@@ -215,11 +217,19 @@ h1 {
   font-size: 1rem;
   font-family: 'MedievalSharp';  cursor: pointer;
   border: none;
-  background-color: #eee;
-  border-radius: 20px;}
+  background-color: #babcc9;
+  border-radius: 20px;
+  border-style: dashed;
+}
 
 .theme-toggle button.active {
-  background-color: #333;
+  background-color: #252037;
   color: #fff;
+}
+
+body {
+  margin: 0;
+  font-family: 'Merriweather', serif;
+  background-color: #FFF2EF;
 }
 
