@@ -108,6 +108,10 @@ body {
     background-color: #4e47d6;
 }
 
+.wait {
+    text-align: center;
+}
+
 .not-found {
     display: inline-block;
     padding: 0.75rem 1.5rem;
@@ -141,7 +145,7 @@ body {
     
 }
 
-p:not(.date):first-letter {
+p:not(.date):not(.footer-text):not(.wait):first-letter {
     font-size: 3rem;
     font-family: 'Old English', serif;
     color: #fdf6e3;
@@ -233,3 +237,19 @@ body {
   background-color: #FFF2EF;
 }
 
+@media (max-width: 768px) {
+    .stamp-placeholder {
+        position: absolute;
+        bottom: -20px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 80px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-image: url('../images/image-from-rawpixel-id-15664082-png.png');
+        border-radius: 50%;
+        box-shadow: 0 0 15px rgba(0,0,0,0.6);
+        z-index: 10;
+    }
+}

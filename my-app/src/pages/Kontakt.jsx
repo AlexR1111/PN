@@ -96,6 +96,7 @@ const Kontakt = () => {
         <button type="submit" disabled={loading}>
           {loading ? 'Senden...' : 'Senden'}
         </button>
+        <p className='wait'>Dies kein einen Moment dauern.</p>
       </form>
       <ToastContainer position="bottom-right" autoClose={3000} />
       <br/>

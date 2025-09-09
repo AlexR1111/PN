@@ -10,3 +10,32 @@
     border-top: 4px double #6e4ac9;
     
 }
+
+@media (max-width: 600px) {
+    .footer-content {
+        position: relative;
+        overflow: hidden;
+        padding: 1rem;
+        font-size: 0.85rem;
+        text-align: center;
+        box-shadow: none;
+        border-top: 2px solid #6e4ac9;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .footer-content p,
+    .footer-content a {
+        margin: 0.5rem 0;
+        display: block;
+        font-size: 0.95rem;
+        line-height: 1.4;
+    }
+
+    .footer-content a {
+        padding: 0.5rem;
+        font-weight: bold;
+        text-decoration: underline;
+        touch-action: manipulation;
+    }
+}
