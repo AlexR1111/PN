@@ -57,6 +57,65 @@ body {
     
 }
 
+.lightbox-slide {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 2rem;
+    gap: 2rem;
+    max-width: 90vw;
+    margin: auto;
+    flex-wrap: wrap;
+}
+
+.lightbox-image {
+    max-width: 60%;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgab(0,0,0,0.5);
+}
+
+.lightbox-text{
+    max-width: 35%;
+    color: #fdf6e3;
+    font-family: 'Merriweather', serif;
+}
+
+.lightbox-text h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.lightbox-text p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .lightbox-slide {
+        flex-direction: column;
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    .lightbox-image {
+        max-width: 100%;
+        border-radius: 6px;
+    }
+
+    .lightbox-text {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .lightbox-text h2 {
+        font-size: 1.2rem;
+    }
+
+    .lightbox-text p {
+        font-size: 0.95rem;
+    }
+}
+
 .gallery-item:hover {
  transform:scale(1.05);
  box-shadow: 0 6px 18px rgba(0,0,0,0.2);  
@@ -145,7 +204,7 @@ body {
     
 }
 
-p:not(.date):not(.footer-text):not(.wait):first-letter {
+p:not(.date):not(.footer-text):not(.wait):not(.lightbox-text p):first-letter {
     font-size: 3rem;
     font-family: 'Old English', serif;
     color: #fdf6e3;

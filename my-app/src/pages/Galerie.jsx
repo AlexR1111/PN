@@ -13,12 +13,23 @@ const Galerie = () => {
  
 
   const medievalSlides = [
-    { src: 'https://res.cloudinary.com/dzlpy6osa/image/upload/visitencarte_back_ggzo4f' },
-    { src: 'https://res.cloudinary.com/dzlpy6osa/image/upload/visitencarte_front_w2uxyg' },
+    { src: 'https://res.cloudinary.com/dzlpy6osa/image/upload/Wappenrock_kurz_repugn',
+      title: 'Ein Kurzer Wappenrock',
+      description: 'Ein kurz geschnittener Wappenrock aus Leinen.'
+     },
+    { src: 'https://res.cloudinary.com/dzlpy6osa/image/upload/Zeltreparatur_rstocn' },
+    { src: 'https://res.cloudinary.com/dzlpy6osa/image/upload/Prunkgewandungen_mit_Nerz_ahoqjk' },
+    { src: 'https://res.cloudinary.com/dzlpy6osa/image/upload/Lieblingsgugel_vbucdk' },
+    { src: 'https://res.cloudinary.com/dzlpy6osa/image/upload/Tom_Hansen_Häs_bvrc77' },
+    { src: 'https://res.cloudinary.com/dzlpy6osa/image/upload/Klappenrock_für_Baby_ono6wo' },
+    { src: 'https://res.cloudinary.com/dzlpy6osa/image/upload/Pillbox_passend_zum_Kleid_js3qj2' },
+    { src: 'https://res.cloudinary.com/dzlpy6osa/image/upload/2_Schamkapsel-Hosen_ppiunq' },
+    { src: 'https://res.cloudinary.com/dzlpy6osa/image/upload/Gewandung_für_Puppen_1_qdmgws' },
+    { src: 'https://res.cloudinary.com/dzlpy6osa/image/upload/Gewandung_für_Puppe_2_c9a8qx' },
   ];
 
   const upcyclingSlides = [
-    { src: 'https://res.cloudinary.com/dzlpy6osa/image/upload/visitencarte_back_ggzo4f' },
+    { src: 'https://res.cloudinary.com/dzlpy6osa/image/upload/maxi-cosy_-_Sack_rhfftp' },
     { src: 'https://res.cloudinary.com/dzlpy6osa/image/upload/visitencarte_front_w2uxyg' },
   ];
 
@@ -79,6 +90,21 @@ const Galerie = () => {
         close={() => setOpen(false)}
         slides={slides}
         index={index}
+        render={{
+          slide: ({slide}) => (
+            <div className="lightbox-slide">
+              <img
+                src={slide.src}
+                alt={slide.titel || 'Bild'}
+                className="lightbox-image"
+                />
+              <div className='lightbox-text'>
+                <h2>{slide.titel}</h2>
+                <p>{slide.description}</p>
+              </div>
+            </div>
+          )  
+      }}
       />
     </motion.div>
   );
