@@ -34,7 +34,7 @@ body {
 
 .gallery-grid {
     display: grid;
-    gap: 1.5rem;
+    gap: 3rem;
     grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
 }
 
@@ -61,6 +61,7 @@ body {
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: ce;
     padding: 2rem;
     gap: 2rem;
     max-width: 90vw;
@@ -70,6 +71,7 @@ body {
 
 .lightbox-image {
     max-width: 60%;
+    max-height: 100vh;
     border-radius: 8px;
     box-shadow: 0 0 10px rgab(0,0,0,0.5);
 }
@@ -89,6 +91,7 @@ body {
     font-size: 1rem;
     line-height: 1.6;
 }
+
 
 @media (max-width: 768px) {
     .lightbox-slide {
