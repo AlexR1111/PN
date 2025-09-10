@@ -5,7 +5,7 @@ import './NavigationBar.css';
 const NavigationBar = () => {
     return (
         <nav className="nav-bar">
-            <img src="" alt=""></img>
+           
             <ul>
                 <li><NavLink to="/"end>⚜️Home</NavLink></li>
                 <li><NavLink to="/galerie">⚜️Galerie</NavLink></li>

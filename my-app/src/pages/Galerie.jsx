@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './PageStyles.css';
 import Lightbox from 'yet-another-react-lightbox';
+import Zoom from 'yet-another-react-lightbox/plugins/zoom';
 import 'yet-another-react-lightbox/styles.css';
 import { motion } from 'framer-motion';
 
@@ -90,6 +91,12 @@ const Galerie = () => {
         close={() => setOpen(false)}
         slides={slides}
         index={index}
+        plugins={[Zoom]}
+        zoom={{
+          maxZoomPixelRatio: 3,
+          scrollToZoom:true,
+          doubleTapDelay: 300,
+        }}
         render={{
           slide: ({slide}) => (
             <div className="lightbox-slide">

@@ -11,7 +11,8 @@ app.use(express.urlencoded({ extended: true }));
 
 const allowedOrigins = [
   'http://localhost:3000',
-  'https://piasnaehstube.vercel.app'
+  'https://piasnaehstube.vercel.app',
+  'https://pias-naehstube.com'
 ];
 
 app.use(cors({

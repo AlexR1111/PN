@@ -18,7 +18,7 @@ const Blog = () => (
             {blogPosts.map(post => (
                 <div key={post.id}>
                     <h2>{post.title}</h2>
-                    <p>{post.date}</p>
+                    <p className='date-blog'>{post.date}</p>
                     <Link to={`/blog/${post.id}`}>Beitrag lesen</Link>
                 </div>
             ))}
