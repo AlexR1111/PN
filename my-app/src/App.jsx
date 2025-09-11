@@ -16,6 +16,7 @@ import Blog from './pages/Blog';
 import Galerie from './pages/Galerie';
 import Danke from './pages/Danke';
 import NotFound from './pages/NotFound';
+import Impressum from './pages/Impressum';
 
 const isLocalhost = window.location.hostname === 'localhost';
 const Router = isLocalhost ? BrowserRouter : HashRouter;
@@ -33,6 +34,8 @@ function AnimatedRoutes() {
         <Route path='/blog' element={<Blog/>} />
         <Route path='/blog/:id' element={<BlogPost/>} />
         <Route path="/danke" element={<Danke/>} />
+        <Route path="/impressum" element={<Impressum />} />
+
         <Route path="*" element={<NotFound/>} />
       </Routes>
     </AnimatePresence>

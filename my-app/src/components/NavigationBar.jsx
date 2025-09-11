@@ -8,10 +8,10 @@ const NavigationBar = () => {
            
             <ul>
                 <li><NavLink to="/"end>⚜️Home</NavLink></li>
-                <li><NavLink to="/galerie">⚜️Galerie</NavLink></li>
-                <li><NavLink to="/kontakt">⚜️Kontakt</NavLink></li>
                 <li><NavLink to="/ueber-mich">⚜️Über Mich</NavLink></li>
+                <li><NavLink to="/galerie">⚜️Galerie</NavLink></li>
                 <li><NavLink to="/blog">⚜️Blog</NavLink></li>
+                <li><NavLink to="/kontakt">⚜️Kontakt</NavLink></li>
             </ul>
         </nav>
     );

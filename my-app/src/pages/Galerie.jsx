@@ -26,6 +26,9 @@ const Galerie = () => {
     { src: 'https://res.cloudinary.com/dzlpy6osa/image/upload/2_Schamkapsel-Hosen_ppiunq' },
     { src: 'https://res.cloudinary.com/dzlpy6osa/image/upload/Gewandung_für_Puppen_1_qdmgws' },
     { src: 'https://res.cloudinary.com/dzlpy6osa/image/upload/Gewandung_für_Puppe_2_c9a8qx' },
+    { src: 'https://res.cloudinary.com/dzlpy6osa/image/upload/Gewandung_Puppen_3_lnyla6' },
+    { src: 'https://res.cloudinary.com/dzlpy6osa/image/upload/Kleid_Mi-Parti_kvtrv9' },
+    { src: 'https://res.cloudinary.com/dzlpy6osa/image/upload/Wams_Mi-Parti_nlzfsa' },
   ];
 
   const upcyclingSlides = [
