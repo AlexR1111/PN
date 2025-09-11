@@ -1,6 +1,6 @@
 import React from 'react';
 import './PageStyles.css';
-import { color, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 const pageTransition = {
   initial: { opacity: 0, y: 40 },
@@ -25,12 +25,18 @@ const UeberMich = () => (
   <p>Du suchst nach Hochwertigen Stoffen, stilvollen Accessoires oder möchtest dich einfach inspirieren lassen? Ich möchte dir einige meiner liebsten Quellen ans Herz legen - Orte, an denen ich selbst gerne stöbere, einkaufe und mich inspirieren lasse. Vielleicht findest du dort genau das Material oder Inspiration, das deinem nächsten Projekt das gewisse etwas verleiht.</p>
   </div>
   <div className='contact-form'><ul className='aboutMe-ref'>
-    <li className='contact-form-inside'><a href='https://tuchundstoff.shop/' style={{color: '#7B4019'}}>🪡Stoffträume ~ TuchundStoff.shop</a></li>
-      <dd className='listDetail'>Qualitätsstoffe für zeitgenössische Mode und gelebte Geschichte. Ob Leinen, Loden oder Samt - hier findest du Naturmaterialien aus europäischen Webereien, ideal für Reenactment, Maßschneiderei oder kreative Projekte.</dd>
-    <li className='contact-form-inside'><a href='https://www.die-hutschmiede.de/'style={{color: '#7B4019'}}>👒Lieblingsstücke ~ Die Hutschmiede</a></li>
-      <dd className='listDetail'>Gewandmacherei, Alltagshüte und Dekoration mit mittelalterlichem Flair. Sie bieten liebevoll gefertigte Einzelstücke an und gehen individuell auf Kundenwünsche ein - ein echter Geheimtipp für stilvolle Gewänder und Accessoires.</dd>
-    <li className='contact-form-inside'><a href='https://www.freye-rittersleut.net/verein/'style={{color: '#7B4019'}}>🛡️Schatzkammer ~ Freye Rittersleut zu Randingen e.V.</a></li>
-      <dd className='listDetail'>Ein Mittelalterverein mit Herzblut und Hingabe. Wer sich für authentische Darstellung, historische Handwerkskunst und lebendige Geschichte interessiert, findet hier nicht nur Inspiration, sonder auch eine lebendige Gemeinschaft, die das Mittelalter auf Märkten und Burgbelebungen zum Leben erweckt.</dd>
+    <li className='contact-form-inside'>
+      <a href='https://tuchundstoff.shop/' style={{color: '#7B4019'}}>🪡Stoffträume ~ TuchundStoff.shop</a>
+      <div className='listDetail'>Qualitätsstoffe für zeitgenössische Mode und gelebte Geschichte. Ob Leinen, Loden oder Samt - hier findest du Naturmaterialien aus europäischen Webereien, ideal für Reenactment, Maßschneiderei oder kreative Projekte.</div>
+    </li>
+    <li className='contact-form-inside'>
+      <a href='https://www.die-hutschmiede.de/' style={{color: '#7B4019'}}>👒Lieblingsstücke ~ Die Hutschmiede</a>
+      <div className='listDetail'>Gewandmacherei, Alltagshüte und Dekoration mit mittelalterlichem Flair. Sie bieten liebevoll gefertigte Einzelstücke an und gehen individuell auf Kundenwünsche ein - ein echter Geheimtipp für stilvolle Gewänder und Accessoires.</div>
+    </li>
+    <li className='contact-form-inside'>
+      <a href='https://www.freye-rittersleut.net/verein/' style={{color: '#7B4019'}}>🛡️Schatzkammer ~ Freye Rittersleut zu Randingen e.V.</a>
+      <div className='listDetail'>Ein Mittelalterverein mit Herzblut und Hingabe. Wer sich für authentische Darstellung, historische Handwerkskunst und lebendige Geschichte interessiert, findet hier nicht nur Inspiration, sonder auch eine lebendige Gemeinschaft, die das Mittelalter auf Märkten und Burgbelebungen zum Leben erweckt.</div>
+    </li>
   </ul>
   </div>
   </motion.div>
