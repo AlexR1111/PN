@@ -20,7 +20,7 @@ const UeberMich = () => (
   <div className='aboutmetext'>
     <h1>Über Mich</h1>
     <h2>Pia Reitz - Pia Ingrid vom Planbach </h2>
-    <img src="https://res.cloudinary.com/dzlpy6osa/image/upload/WhatsApp_Image_2025-09-11_at_12.25.40_hpnord" alt="Pia Reitz" class="about-me-img" />
+    <img src="https://res.cloudinary.com/dzlpy6osa/image/upload/ZV9nZW5fcmVtb3ZlOnByb21wdF8od2luZWdsYXNzKTttdWx0aXBsZV90cnVlL2NfZmlsbCxhcl85OjE2LGdfYXV0bw_vq7lps" alt="Pia Reitz" class="about-me-img" />
     <p>Nähen begleitet mich schon mein ganzes Leben. Alles begann um 1980, als meiner Mutter mir ihre alte Paff-Nähmaschine überließ. Mit viel Neugier und Kreativität fertigte ich damals aus alten Jeans und Leder die sogenannten "Ibiza-Jacken" - ein echtes Upcycling-Projekt, lange bevor der Begriff in Mode kam.<br/><br/> 
     Kurz darauf gönnte ich mir meine erste eigene neue Pfaff-Maschine, eine Tiptronic. Etwa zu dieser Zeit entdeckte ich gemeinsam mit meinem Mann das Westernhobby. Wir tauchten zuerst in die Epoche um 1860 ein, später verschlug es uns in die Zeit um 1740.<br/><br/> 
     Die ersten historischen Schnittmuster - sogenannte "Past Patterns" aus Amerika - musste ich noch mühsam von Hand übersetzzen. Doch genau diese Herausforderung entfachte meine Leidenschaft für historische Gewandungen.<br/><br/> 
