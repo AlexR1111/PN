@@ -19,16 +19,18 @@ body {
   background-size: contain;
   background-blend-mode: multiply;
   color: #2c1e47;
-  max-width: 100%;
+  
   
 }
+
+
 
 /* ──────────────────────────────────────────────────────────────────────────
    Seitenstruktur & Überschriften
    ────────────────────────────────────────────────────────────────────────── */
 .page {
-  padding: 5%;
-  background: linear-gradient(135deg, rgba(18,48,174,0.1) rgba(30,61,220,0.5));
+  padding: 5rem;
+  background: linear-gradient(135deg, rgba(18,48,174,0.1), rgba(30,61,220,0.5));
   color: #fdf6e3;
   text-shadow: 1px 1px 2px rgba(0,0,0,1);
   min-height: 100vh;
@@ -119,26 +121,86 @@ h1 {
 /* ──────────────────────────────────────────────────────────────────────────
    Responsive Design
    ────────────────────────────────────────────────────────────────────────── */
+/* Mobile M */
+@media (max-width: 375px) {
+  body {
+    display: block;
+  }
+
+  .gallery-item {
+    width: 160px;
+    height: 120px;
+    font-size: 1.5rem;
+  }
+
+  .contact-form,
+  .contact-form-inside {
+    padding: 0.75rem;
+  }
+
+  .lightbox-text h2 {
+    font-size: 1rem;
+  }
+}
+
+/* Mobile L */
+@media (max-width: 425px) {
+  
+
+  .gallery-item {
+    width: 100px;
+    height: 130px;
+    font-size: 1.6rem;
+    margin:auto
+  }
+
+  .contact-form,
+  .contact-form-inside {
+    padding: 1rem;
+    max-width: 95%;
+  }
+
+  .lightbox-text h2 {
+    font-size: 1.2rem;
+  }
+}
+
 @media (max-width: 768px) {
+
+  body {
+    background-size: contain;
+    background-repeat: repeat;
+    
+  }
+
   .page {
-    padding: 2rem;
-    margin-left: 0;
-    margin-right: 0;
+    padding: 1rem;
+    max-width: 100%;
     background-size: cover;
+    text-align: center;
   }
 
   .listDetail {
     max-width: 100%;
-    margin-left: 10%;
+  }
+
+.contact-form,
+  .contact-form-inside {
+    padding: 1rem;
+    max-width: 95%;
   }
 
   .contact-form,
   .impressumPage {
-    margin-left: 0;
-    margin-right: 0;
+    margin-left: 2rem;
+    margin-right: 2rem;
     padding-left: 1rem;
     padding-right: 1rem;
   }
+
+.impressumPage h1{
+  font-size: xx-large
+}
 
   .lightbox-slide {
     flex-direction: column;
@@ -166,8 +228,8 @@ h1 {
 
   .stamp-placeholder {
     position: absolute;
-    bottom: -20px;
-    left: 50%;
+    bottom: 5rem;
+    left: 5rem;
     transform: translateX(-50%);
     width: 80px;
     height: 80px;
@@ -178,57 +240,50 @@ h1 {
     box-shadow: 0 0 15px rgba(0,0,0,0.6);
     z-index: 10;
   }
+
+  .contact-form-inside{
+    padding: 2rem;
+  }
 }
 
 /* ──────────────────────────────────────────────────────────────────────────
    Kontaktformular
    ────────────────────────────────────────────────────────────────────────── */
-.contact-form {
-  border: 15px outset #b2997a;
-  background-image: url('../images/parchment-texture.jpg');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+.contact-form,
+.contact-form-inside {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 600px;
+  margin: 4rem auto 0 auto;
   padding: 2rem;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-  margin-top: 4rem;
-  max-width: 100%;
-  margin-left: 20%;
-  margin-right: 20%;
-  text-shadow: 2px 2px 6px black;
-text-align: center;
-padding-left: 10%;
-padding-right: 10%;
-}
-
-.contact-form-inside {
-  border: 15px inset #cbad89;
+  gap: 1.5rem;
+  text-align: center;
   background-image: url('../images/parchment-texture.jpg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  padding:1rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  margin-top: 1rem;
-  max-width: 100%;
-  text-align: center;
-  margin-left: 10%;
-  margin-right: 10%;
+  border: 15px outset #b2997a;
+  text-shadow: 2px 2px 6px black;
 }
 
+/* Innenbereich mit abweichender Optik */
+.contact-form-inside {
+  border: 15px inset #cbad89;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+/* Eingabefelder */
 .contact-form input,
 .contact-form textarea {
   padding: 0.75rem;
-  border: 2px solid #FFBF78;
+  border: 2px groove #FFBF78;
   border-radius: 6px;
   background-color: #fdf6e3;
   font-size: 1rem;
   transition: border-color 0.3s ease;
-  border-style: groove;
 }
 
 .contact-form input:focus,
@@ -237,9 +292,9 @@ padding-right: 10%;
   outline: none;
 }
 
+/* Button */
 .contact-form button {
   margin: 0 auto;
-  display: block;
   background-color: #b98c58;
   color: #fdf6e3;
   padding: 0.75rem;
@@ -254,7 +309,6 @@ padding-right: 10%;
 .contact-form button:hover {
   background-color: #FFBF78;
 }
-
 /* ──────────────────────────────────────────────────────────────────────────
    Blog & sonstiger Inhalt
    ────────────────────────────────────────────────────────────────────────── */
@@ -279,8 +333,18 @@ padding-right: 10%;
 .aboutmetext {
     display: block;
     align-content: center;
-    margin-left: 25%;
-    margin-right: 25%;
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+.about-me-img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.7);
+  margin-bottom: 2rem;
+  border: 5px groove #FFBF78;
 }
 
 .aboutMe-ref {
@@ -311,8 +375,8 @@ padding-right: 10%;
   gap: 1rem;
   margin-top: 4rem;
   max-width: 100%;
-  margin-left: 10%;
-  margin-right: 10%;
+  margin-left: 20%;
+  margin-right: 20%;
   text-shadow: 2px 2px 6px black;
 text-align: center;
 padding-left: 10%;

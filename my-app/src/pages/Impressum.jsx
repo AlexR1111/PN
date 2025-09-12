@@ -27,9 +27,9 @@ const Impressum = () => {
                     Hindenburgstraße 23<br/>
                     71272 Renningen<br/>
                     Deutschland</p>
-                    <p>Telefon: +49 123 456789<br/>
+                    <p>Telefon: +49 175 1611877<br/>
                     E-Mail: PiasNaehstube@gmx.de</p>
-                    <p>Umsatzsteuer-ID: DE 123 456 789</p>
+                    <p>Umsatzsteuer-ID: DE452564876</p>
                     <h1>Datenschutz</h1>
                     <h2>Allgemeines</h2>
                     <p>Der Schutz Ihrer persönlichen Daten ist mir ein wichtiges Anliegen. Diese Website verarbeitet personenbezogene Daten ausschließlich im Rahmen der gesetzlichen Bestimmungen der Datenschutz-Grundverordnung (DSGVO)</p>
