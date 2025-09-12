@@ -34,14 +34,14 @@ const Impressum = () => {
                     <h2>Allgemeines</h2>
                     <p>Der Schutz Ihrer persönlichen Daten ist mir ein wichtiges Anliegen. Diese Website verarbeitet personenbezogene Daten ausschließlich im Rahmen der gesetzlichen Bestimmungen der Datenschutz-Grundverordnung (DSGVO)</p>
                     <h2>Kontaktformular</h2>
-                    <p>Wenn Sie mir über das Kontaktformular eine Nachricht senden, werden die von Ihnen eigegebenen Daten(z.B. Name,E-Mail-Adresse, Nachricht) ausschließlich zur Bearbeitung Ihrer Anfrage verwendet. Eine Weitergabe an Dritte erfolgt nicht. Die Daten werden nach abgeschlossener Bearbeitung gelöscht, sofer keine gesetzliche Aufbewahrungspflicht besteht.</p>
+                    <p>Wenn Sie mir über das Kontaktformular eine Nachricht senden, werden die von Ihnen eingegebenen Daten(z.B. Name,E-Mail-Adresse, Nachricht) ausschließlich zur Bearbeitung Ihrer Anfrage verwendet. Eine Weitergabe an Dritte erfolgt nicht. Die Daten werden nach abgeschlossener Bearbeitung gelöscht, sofern keine gesetzliche Aufbewahrungspflicht besteht.</p>
                     <h2>Hosting</h2>
                     <p>Diese Website wird bei den externen Dienstleistern <strong>Vercel Inc.</strong> und <strong>Render</strong> gehostet.</p><br/>
                     Vercel Inc., 340  Lemon Ave #4133, Walnut, CA 91789, USA <br/>
                     Render, 1001 Page St, San Francisco, CA 94117, USA <p/>
                     <p>Beim Besuch dieser Website werden durch die Hosting-Anbieter automatisch technische Zugriffsdaten erfasst, darunter: IP-Adresse, Datum und Uhrzeit des Zugriffs, Browerstype und Betriebssystem, Referrer-URL. Diese Daten dienen ausschließlich der technischen Bereitstellung und Sicherheit der Website.</p>
-                    <p>Die Verarbeitung erfolgt auf Grundlage von Art. 6 abs. 1 lit. f DSGVO (berechtigtes Interesse an einem sicheren und stabilen Webauftritt)</p>
-                    <p>Hinweis zur Datenübertragung in der USA: Die Datenverarbeitung erfolgt auf Basis sogenannter Standartvertragsklauseln gemäß Art. 46 Abs. 2 DSGVO, um ein angemessenes Datenschutzniveau sicherzustellen. Weitere Information finden Sie in den jeweiligen <a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer">Privacy Policies von Vercel</a> und <a href="https://render.com/privacy" target="_blank" rel="noopener noreferrer">Render</a>.</p>
+                    <p>Die Verarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1 Zif. f DSGVO (berechtigtes Interesse an einem sicheren und stabilen Webauftritt)</p>
+                    <p>Hinweis zur Datenübertragung in der USA: Die Datenverarbeitung erfolgt auf Basis sogenannter Standartvertragsklauseln gemäß Art. 46 Abs. 2 DSGVO, um ein angemessenes Datenschutzniveau sicherzustellen. Weitere Informationen finden Sie in den jeweiligen <a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer">Privacy Policies von Vercel</a> und <a href="https://render.com/privacy" target="_blank" rel="noopener noreferrer">Render</a>.</p>
                     <h2>Externe Links</h2>
                     <p>Diese Website enthält Links zu externen Webseiten Dritter. Auf deren Inhalte und Datenschutzpraktiken habe ich keinen Einfluss. Für die Verarbeitung personenbezogener Daten auf den verlinkten Seiten ist ausschließlich der jeweilige Betreiber verantwortlich.</p>
                     <h2>Keine Cookies & kein Tracking</h2>
