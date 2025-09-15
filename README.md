@@ -17,7 +17,7 @@ Features
 
 Startseite mit Begrüßung und Überblick
 Galerie zur Präsentation von Produkten oder Dienstleistungen
-Kontaktbereich mit Formular (in Planung)
+Kontaktbereich mit Formular
 Über mich – Vorstellung der Person hinter dem Gewerbe
 Blog – Raum für Updates, Geschichten und Einblicke (optional erweiterbar)
 
@@ -44,17 +44,6 @@ git clone https://github.com/dein-nutzername/dein-repo.git
 cd dein-repo
 npm install
 npm run dev
-
-
-Ausblick
-
-Dieses Projekt ist bewusst modular aufgebaut, um später Funktionen wie:
-
-Benutzer-Login
-Admin-Dashboard
-Mehrsprachigkeit
-problemlos ergänzen zu können.
-
 
 Mitwirkende
 Projektleitung & Entwicklung: Alex 
