@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, {useState} from "react";
 import './SidebarPreview.css';
 import Lightbox from "yet-another-react-lightbox";
 import {blogPosts} from './blogData';
@@ -44,7 +44,7 @@ const SidebarPreview = () => {
                         <img
                             key={index}
                             src={img.src}
-                            alt={img.title || 'Bild ${index +1}'}
+                            alt={img.title || `Bild ${index +1}`}
                             onClick={() => openLightbox(index)}
                             style={{ cursor: 'pointer'}}
                         />
