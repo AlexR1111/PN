@@ -2,6 +2,7 @@ import React from "react";
 import './PageStyles.css';
 import {motion} from 'framer-motion';
 import VorschauKarten from '../components/VorschauKarten';
+import SidebarPreview from "../components/SidebarPreview";
 
 const Home = () => (
     <motion.div
@@ -14,6 +15,7 @@ const Home = () => (
         <h1>Willkommen auf meiner Seite</h1>
         <p>Hier kommt dann später der inhalt.</p>
         <VorschauKarten/>
+        <SidebarPreview/>
     </motion.div>
 );
 

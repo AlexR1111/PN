@@ -1,0 +1,69 @@
+.sidebar-preview {
+    background-image: url('../images/parchment-texture.jpg');
+    border: 10px inset rgb(113, 78, 147);
+    position: fixed;
+    right: 0;
+    top: 10vh;
+    bottom: 10vh;
+    width: 220px;
+    padding: 20px;
+    overflow-y: auto;
+    box-shadow: -2px 0 8px rgba(0,0,0,0.1);
+}
+
+.sidebar-preview h2 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.blog-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.blog-section li {
+    margin-bottom: 15px;
+}
+
+.blog-section h3 {
+    margin: 0;
+    font-size: 1rem;
+}
+
+.blog-section p {
+    font-size: 0.9rem;
+}
+
+.blog-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    padding: 5px;
+    transition: background-color 0.2s ease;
+}
+
+.blog-link:hover {
+    color: white
+}
+
+.gallery-thumbnails {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 150px;
+    border-radius: 6px;
+    object-fit: cover;
+}
+
+.gallery-item h4 {
+    margin: 5px 0 0;
+    font-size: 1rem;
+}
+
+.gallery-item p {
+    font-size: 0.85rem;
+}
