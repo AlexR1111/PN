@@ -5,6 +5,9 @@ import {blogPosts} from './blogData';
 import { medievalSlides, upcyclingSlides } from "./galleryData";
 
 const SidebarPreview = () => {
+
+    const isMobile = window.innerWidth >= 768;
+    const [collapsed, setCollapsed] = useState(isMobile);
     const allImages = [...medievalSlides, ...upcyclingSlides].slice(0,3);
     const slides = allImages.map(img => ({
         src: img.src,
@@ -21,45 +24,55 @@ const SidebarPreview = () => {
     };
 
     return (
-        <aside className="sidebar-preview">
-            <section className="blog-section">
-                <h2>Neuste Blogposts</h2>
-                <ul>
-                    {blogPosts.map(post => (
-                        <li key={post.id}>
-                            <a href={post.url} className="blog-link">
-                            <h3>{post.title}</h3>
-                            <p>{post.content.slice(0,100)}...</p>
-                            <span>{post.date || 'Kein Datum'}</span>
-                            </a>
-                        </li>
-                    ))}
-                </ul>
-            </section>
+        <aside className={`sidebar-preview${collapsed ? " collapsed" : ""}`}>
+            <button
+                className="sidebar-toggle-btn"
+                onClick={() => setCollapsed(!collapsed)}
+                >
+                    {collapsed ? "⏴": "⏵"}
+                </button>
+                {!collapsed && (
+                    <>
+                    <section className="blog-section">
+                        <h2>Neuste Blogposts</h2>
+                        <ul>
+                            {blogPosts.map(post => (
+                                <li key={post.id}>
+                                    <a href={post.url} className="blog-link">
+                                    <h3>{post.title}</h3>
+                                    <p>{post.content.slice(0,100)}...</p>
+                                    <span>{post.date || 'Kein Datum'}</span>
+                                    </a>
+                                </li>
+                            ))}
+                        </ul>
+                    </section>
 
-            <section className="gallery-section">
-                <h2>Neueste Galerie-Bilder</h2>
-                <div className="gallery-thumbnails">
-                    {allImages.map((img, index) => (
-                        <img
-                            key={index}
-                            src={img.src}
-                            alt={img.title || `Bild ${index +1}`}
-                            onClick={() => openLightbox(index)}
-                            style={{ cursor: 'pointer'}}
-                        />
-                    ))}
-                </div>
-            </section>
+                    <section className="gallery-section">
+                        <h2>Neueste Galerie-Bilder</h2>
+                        <div className="gallery-thumbnails">
+                            {allImages.map((img, index) => (
+                                <img
+                                    key={index}
+                                    src={img.src}
+                                    alt={img.title || `Bild ${index +1}`}
+                                    onClick={() => openLightbox(index)}
+                                    style={{ cursor: 'pointer'}}
+                                />
+                            ))}
+                        </div>
+                    </section>
+                    </>
+                )}
 
-            <Lightbox
-                open={isOpen}
-                close={() => setIsOpen(false)}
-                slides={slides}
-                index={photoIndex}
-            />
-        </aside>
-    );
-};
+                <Lightbox
+                    open={isOpen}
+                    close={() => setIsOpen(false)}
+                    slides={slides}
+                    index={photoIndex}
+                />
+            </aside>
+        );
+    };
 
 export default SidebarPreview;

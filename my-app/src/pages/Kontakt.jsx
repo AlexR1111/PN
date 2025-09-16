@@ -66,7 +66,7 @@ const Kontakt = () => {
       transition={pageTransition.transition}
     >
       <div className='contactPage'>
-      <h1>📯Kontakt</h1>
+      <h1>Kontakt</h1>
       <p>Du hast Fragen,Ideen oder möchtest ein individuelles Nähprojekt in Auftrag geben?<br/>
       Ich freue mich über deine Nachricht - ob es um Stoffe, Schnitte oder Sonderwünsche geht.<br/> 
       Nutze gerne das Formular, um mir zu schreiben oder einen Auftrag anzufragen. </p>

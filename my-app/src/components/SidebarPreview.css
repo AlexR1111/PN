@@ -16,6 +16,42 @@
     margin-bottom: 10px;
 }
 
+.sidebar-preview.collapsed {
+    width: 10px;
+    min-width: 10px;
+    overflow: hidden;
+    transition: width 0.3s;
+}
+
+.sidebar-toggle-btn {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 10;
+    background: #b2997a;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    padding: 0.5rem;
+    cursor: pointer;
+}
+@media (max-width: 768px) {
+    .sidebar-preview.collapsed {
+    width: 3px;
+    min-width: 2px;
+    overflow: hidden;
+    transition: width 0.3s;
+}}
+
+@media (max-width: 425px) {
+    .sidebar-preview.collapsed {
+    width: 0.1rem;
+    min-width: 0px;
+    overflow: hidden;
+    transition: width 0.3s;
+}
+    
+}
 .blog-section ul {
     list-style: none;
     padding: 0;

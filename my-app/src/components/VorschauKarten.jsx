@@ -23,7 +23,7 @@ function VorschauKarten() {
         {
             title:'Blog',
             image:blogBild,
-            description:'Entdecke meine bisherigen Arbeiten.',
+            description:'Neuigkeiten und Anleitungen.',
             link:'/blog',
         },
         {

@@ -24,7 +24,6 @@ body {
 }
 
 
-
 /* ──────────────────────────────────────────────────────────────────────────
    Seitenstruktur & Überschriften
    ────────────────────────────────────────────────────────────────────────── */
@@ -213,6 +212,10 @@ h1 {
 /* Mobile L */
 @media (max-width: 425px) {
   
+  .impressumPage {
+    padding: 1rem;
+    max-width: 95%;
+  }
 
   .gallery-item {
     width: 100px;
@@ -244,6 +247,8 @@ h1 {
     background-repeat: repeat;
     
   }
+
+
 
   .page {
     padding: 1rem;
@@ -460,9 +465,7 @@ h1 {
   margin-left: 20%;
   margin-right: 20%;
   text-shadow: 2px 2px 6px black;
-text-align: center;
-padding-left: 10%;
-padding-right: 10%;
+
 }
 
 /* ──────────────────────────────────────────────────────────────────────────

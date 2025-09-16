@@ -18,6 +18,7 @@ import Danke from './pages/Danke';
 import NotFound from './pages/NotFound';
 import Impressum from './pages/Impressum';
 
+
 const isLocalhost = window.location.hostname === 'localhost';
 const Router = isLocalhost ? BrowserRouter : HashRouter;
 
@@ -44,7 +45,9 @@ function AnimatedRoutes() {
 
 function App() {
   return (
+    
     <Router>
+     
       <NavigationBar />
       <ScrollToTopButton/>
       <AnimatedRoutes/>
