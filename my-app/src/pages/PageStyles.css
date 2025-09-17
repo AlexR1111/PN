@@ -42,11 +42,12 @@ body {
 .page h1,
 h1 {
   color: #fdf6e3;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   font-size: 3.5rem;
   text-shadow: 1px 1px 2px rgba(0,0,0,1);
   font-family: 'MedievalSharp', cursive;
 }
+
 
 /* ──────────────────────────────────────────────────────────────────────────
    Vorschau Karten
@@ -58,6 +59,8 @@ h1 {
   gap: 2rem;
   padding: 2rem;
 }
+
+
 
 .card {
   border-radius: 8px;
@@ -95,10 +98,12 @@ h1 {
   cursor: pointer;
   font-weight: bold;
   transition: background-color 0.3s ease;
+   transition: transform 0.5 ease;
 }
 
 .card button:hover {
   background-color: #b98c58;
+  transform: scale(1.1);
 }
 
 /* ──────────────────────────────────────────────────────────────────────────
@@ -118,7 +123,7 @@ h1 {
   url('../images/parchment-texture.jpg');
   border: 8px outset #cbad89;
   text-shadow: 2px 3px 9px#2c1e47;
-  column-count: 2;
+  column-count: 1;
   column-gap: 2rem;
   text-align: center;
 }
@@ -146,6 +151,58 @@ h1 {
   transform: scale(1.05);
   box-shadow: 0 6px 18px rgba(0,0,0,0.2);
 }
+
+
+.tabs {
+  margin-top: 2rem;
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Tab Buttons */
+.tab-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.tab-buttons button {
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  font-family: 'Cinzel', serif;
+  background-image: url('../images/parchment-texture.jpg');
+  background-repeat: repeat;
+  border: 4px outset #cbad89;
+  color: #2c1e47;
+  text-shadow: 1px 1px 4px #fff;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  border-radius: 8px;
+}
+
+.tab-buttons button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+}
+
+/* Active Tab */
+.tab-buttons button.active {
+  background-color: #C68FE6;
+  border: 4px inset #FFEEA9;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 2px 2px 6px #2c1e47;
+}
+
+/* Tab Content */
+.tab-content {
+  padding: 1rem;
+
+}
+
 
 /* ──────────────────────────────────────────────────────────────────────────
    Lightbox
@@ -212,6 +269,10 @@ h1 {
 /* Mobile L */
 @media (max-width: 425px) {
   
+.tab-buttons {
+  display: contents;
+}
+
   .impressumPage {
     padding: 1rem;
     max-width: 95%;
@@ -225,8 +286,12 @@ h1 {
   }
 
   .gallery-text {
-    max-width: 80%;
-    margin: 3rem;
+    max-width: 90%;
+    margin-bottom: 1rem;
+    width: 300px;
+    display: flex;
+    justify-content: center;
+  
   }
 
   .contact-form,
@@ -395,6 +460,7 @@ h1 {
 
 .contact-form button:hover {
   background-color: #FFBF78;
+  transform: scale(1.05);
 }
 /* ──────────────────────────────────────────────────────────────────────────
    Blog & sonstiger Inhalt
@@ -550,4 +616,9 @@ h1 {
 .theme-toggle button.active {
   background-color: #FFBF78;
   color: #FFEEA9;
+  transform: scale(1.05);
+}
+
+.theme-toggle button:hover {
+  transform: scale(1.05);
 }

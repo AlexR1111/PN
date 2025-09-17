@@ -70,3 +70,11 @@ export const upcyclingSlides = [
     { src: 'https://res.cloudinary.com/dzlpy6osa/image/upload/Collage_2025-09-11_16_28_07_1_qs8tn8' },
     { src: 'https://res.cloudinary.com/dzlpy6osa/image/upload/Collage_2025-09-11_16_29_57_pbfe32' },
   ];
+
+
+export const customSlides = [
+  {src:'https://res.cloudinary.com/dzlpy6osa/image/upload/Collage_2025-09-11_16_29_57_pbfe32',
+    title: 'test',
+    description: 'test test'
+  },
+]
