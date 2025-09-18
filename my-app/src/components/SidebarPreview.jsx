@@ -4,6 +4,7 @@ import Lightbox from "yet-another-react-lightbox";
 import {blogPosts} from './blogData';
 import { medievalSlides, upcyclingSlides } from "./galleryData";
 
+
 const SidebarPreview = () => {
 
     const isMobile = window.innerWidth >= 768;
