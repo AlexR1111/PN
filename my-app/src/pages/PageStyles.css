@@ -402,7 +402,8 @@ h1 {
    Kontaktformular
    ────────────────────────────────────────────────────────────────────────── */
 .contact-form,
-.contact-form-inside {
+.contact-form-inside,
+.admin-page {
   box-sizing: border-box;
   width: 100%;
   max-width: 600px;

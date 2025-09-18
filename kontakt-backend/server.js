@@ -62,6 +62,32 @@ app.post('/api/sendMail', async (req, res) => {
   }
 });
 
+const { GoogleSpreadsheet } = require('google-spreadsheet');
+const creds = require('./config/reflected-night-472511-v4-be2f34a592f9.json');
+
+app.post('/api/blogposts', async (req, res) => {
+  const { id, title, date, content, imageUrl } = req.body;
+
+  const SPREADSHEET_ID = '1uB83-nhx1Ql5BkFWACMtHHAfrQZZ1SXvhSO1VaX3Zts';
+
+  try {
+    const doc = new GoogleSpreadsheet(SPREADSHEET_ID);
+    await doc.useServiceAccountAuth(creds);
+    await doc.loadInfo();
+
+    const sheet = doc.sheetsByIndex[0];
+    await sheet.addRow({ id, title, date, content, imageUrl });
+
+    console.log("✅ Blogpost gespeichert:", title);
+    res.status(200).json({ success: true, message: 'Blogpost gespeichert!' });
+  } catch (error) {
+    console.error("❌ Fehler beim Speichern:", error.message);
+    res.status(500).json({ success: false, message: 'Fehler beim Speichern.' });
+  }
+});
+
+
+
 // Server starten
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`🚀 Server läuft auf Port ${PORT}`));

@@ -8,6 +8,7 @@ import NavigationBar from './components/NavigationBar';
 import Footer from './components/Footer';
 import ScrollToTopButton from './components/ScrollToTopButton';
 import BlogPost from './components/BlogPost';
+import Login from './components/Login';
 
 import Home from './pages/Home';
 import Kontakt from './pages/Kontakt';
@@ -17,7 +18,7 @@ import Galerie from './pages/Galerie';
 import Danke from './pages/Danke';
 import NotFound from './pages/NotFound';
 import Impressum from './pages/Impressum';
-
+import Admin from './pages/Admin';
 
 const isLocalhost = window.location.hostname === 'localhost';
 const Router = isLocalhost ? BrowserRouter : HashRouter;
@@ -36,7 +37,8 @@ function AnimatedRoutes() {
         <Route path='/blog/:id' element={<BlogPost/>} />
         <Route path="/danke" element={<Danke/>} />
         <Route path="/impressum" element={<Impressum />} />
-
+        <Route path='/login' element={<Login/>} />
+        <Route path='/admin' element={<Admin/>} />
         <Route path="*" element={<NotFound/>} />
       </Routes>
     </AnimatePresence>

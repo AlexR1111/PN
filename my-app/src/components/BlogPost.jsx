@@ -1,14 +1,20 @@
 import { useParams } from "react-router-dom";
-import { blogPosts } from "./blogData";
+import { useEffect, useState } from "react";
+import { loadBlogPosts } from "./loadBlogPosts";
+
 
 export default function BlogPost() {
     const {id} = useParams();
-    
-    //controll
-    console.log("ID aus URL:", id);
-    console.log("Verfügbare IDs:", blogPosts.map(p => p.id));
+    const [post, setPost] = useState(null);
 
-    const post = blogPosts.find(p => p.id === id);
+    useEffect(() => {
+        async function fetchPost() {
+            const posts = await loadBlogPosts();
+            const found = posts.find(p => p.id === id);
+            setPost(found);
+        }
+        fetchPost();
+    }, [id]);
 
     if (!post) return <p>Beitrag nicht gefunden</p>;
 
@@ -17,14 +23,13 @@ export default function BlogPost() {
             <div className="blog-frame">
                 <h1>{post.title}</h1>
                 <p className="date">{post.date}</p>
-                {Array.isArray(post.src) && post.src.map((url, index) => (
+                {post.imageUrl && (
                     <img
-                        key={index}
-                        src={url}
-                        alt={`${post.title} Bild ${index +1}`}
+                        src={post.imageUrl}
+                        alt={post.title}
                         className="blog-image"
                         />
-                ))}
+                )}
 
                 <div
                     className="content"
