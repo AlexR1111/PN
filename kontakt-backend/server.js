@@ -3,9 +3,12 @@ const nodemailer = require('nodemailer');
 const cors = require('cors');
 require('dotenv').config();
 
+const { GoogleSpreadsheet } = require('google-spreadsheet');
+const { JWT } = require('google-auth-library');
+
 const app = express();
 
-// Middleware
+// 🌐 Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -29,15 +32,12 @@ app.use(cors({
 
 // 📨 Mailversand-Route
 app.post('/api/sendMail', async (req, res) => {
-  console.log("📨 Anfrage erhalten");
-  console.log("req.body:", req.body);
-
   const { name, email, message } = req.body;
 
   const transporter = nodemailer.createTransport({
     host: "mail.gmx.net",
     port: 587,
-    secure: false, // TLS wird automatisch verwendet
+    secure: false,
     auth: {
       user: process.env.EMAIL_USER,
       pass: process.env.EMAIL_PASS  
@@ -57,26 +57,24 @@ app.post('/api/sendMail', async (req, res) => {
     res.status(200).json({ success: true, message: 'Email gesendet!' });
   } catch (error) {
     console.error("❌ Fehler beim Mailversand:", error.message);
-    console.error("🧵 Stacktrace:", error.stack);
     res.status(500).json({ success: false, message: 'Fehler beim Senden.' });
   }
 });
 
-const { GoogleSpreadsheet } = require('google-spreadsheet');
-const creds = {
-  client_email: process.env.GOOGLE_CLIENT_EMAIL,
-  private_key: process.env.GOOGLE_PRIVATE_KEY.replace(/\\n/g, '\n'),
-  project_id: process.env.GOOGLE_PROJECT_ID
-};
-
+// 📝 Blogpost speichern
 app.post('/api/blogposts', async (req, res) => {
   const { id, title, date, content, imageUrl } = req.body;
 
-  const SPREADSHEET_ID = process.env.GOOGLE_SPREADSHEET_ID;
+  const authClient = new JWT({
+    email: process.env.GOOGLE_CLIENT_EMAIL,
+    key: process.env.GOOGLE_PRIVATE_KEY.replace(/\\n/g, '\n'),
+    scopes: ['https://www.googleapis.com/auth/spreadsheets']
+  });
+
+  const spreadsheetId = process.env.GOOGLE_SPREADSHEET_ID;
 
   try {
-    const doc = new GoogleSpreadsheet(SPREADSHEET_ID);
-    await doc.useServiceAccountAuth(creds);
+    const doc = new GoogleSpreadsheet(spreadsheetId, authClient);
     await doc.loadInfo();
 
     const sheet = doc.sheetsByIndex[0];
@@ -90,8 +88,6 @@ app.post('/api/blogposts', async (req, res) => {
   }
 });
 
-
-
-// Server starten
+// 🚀 Server starten
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`🚀 Server läuft auf Port ${PORT}`));
