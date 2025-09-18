@@ -13,11 +13,12 @@ export default function Admin() {
     
 
     useEffect(() => {
-        const auth = localStorage.getItem("isAuthenticated");
+      const auth = localStorage.getItem("isAuthenticated");
         if (auth !== "true") {
-            navigate("/login");
+        navigate("/login");
         }
-    }, []);
+    }, [navigate]);
+
 
     const handleChange = (e) => {
         setFormData({...formData, [e.target.name]: e.target.value});
