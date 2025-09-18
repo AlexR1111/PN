@@ -11,7 +11,7 @@ export default function BlogPost() {
         <div className="page">
             <div className="blog-frame">
                 <h1>{post.title}</h1>
-                <p class="date">{post.date}</p>
+                <p className="date">{post.date}</p>
                 {Array.isArray(post.src) && post.src.map((url, index) => (
                     <img
                         key={index}
@@ -23,7 +23,7 @@ export default function BlogPost() {
 
                 <div
                     className="content"
-                    dangerouslySetInnerHTML={{__html:post.content}
+                    dangerouslySetInnerHTML={{__html: post.content}
                     }></div>
             </div>
         </div>
