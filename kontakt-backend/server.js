@@ -63,12 +63,16 @@ app.post('/api/sendMail', async (req, res) => {
 });
 
 const { GoogleSpreadsheet } = require('google-spreadsheet');
-const creds = require('./config/reflected-night-472511-v4-be2f34a592f9.json');
+const creds = {
+  client_email: process.env.GOOGLE_CLIENT_EMAIL,
+  private_key: process.env.GOOGLE_PRIVATE_KEY.replace(/\\n/g, '\n'),
+  project_id: process.env.GOOGLE_PROJECT_ID
+};
 
 app.post('/api/blogposts', async (req, res) => {
   const { id, title, date, content, imageUrl } = req.body;
 
-  const SPREADSHEET_ID = '1uB83-nhx1Ql5BkFWACMtHHAfrQZZ1SXvhSO1VaX3Zts';
+  const SPREADSHEET_ID = process.env.GOOGLE_SPREADSHEET_ID;
 
   try {
     const doc = new GoogleSpreadsheet(SPREADSHEET_ID);
