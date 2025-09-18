@@ -3,6 +3,11 @@ import { blogPosts } from "./blogData";
 
 export default function BlogPost() {
     const {id} = useParams();
+    
+    //controll
+    console.log("ID aus URL:", id);
+    console.log("Verfügbare IDs:", blogPosts.map(p => p.id));
+
     const post = blogPosts.find(p => p.id === id);
 
     if (!post) return <p>Beitrag nicht gefunden</p>;
