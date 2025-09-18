@@ -4,7 +4,7 @@ export const blogPosts = [
   id:'stoffquellen',
   title:'Wo bekomme ich gute Stoffe her?',
   date: '18.09.2025',
-  url:'blog/stoffquellen',
+  url:'/blog/stoffquellen',
   content:`Wer gerne näht, gestaltet oder historische Projekte umsetzt, weiß: Der Stoff macht den Unterschied. Qualität, Haptik und Authentizität sind entscheidend – und genau deshalb möchte ich heute drei besondere Shops vorstellen.
 
 1. Sartor Stoffe – Seide in ihrer schönsten Form:
@@ -29,7 +29,7 @@ Ob feine Seide, historische Muster oder strapazierfähiges Material – diese Sh
       src:['https://res.cloudinary.com/dzlpy6osa/image/upload/IMG-20250912-WA0015_uygty5',
       'https://res.cloudinary.com/dzlpy6osa/image/upload/IMG-20250912-WA0017_cyte3c',
       'https://res.cloudinary.com/dzlpy6osa/image/upload/IMG-20250912-WA0018_k6isla'],
-      url:'blog/tarp',
+      url:'/blog/tarp',
       content:''
     },
     
