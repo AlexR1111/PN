@@ -32,7 +32,7 @@ const Galerie = () => {
     >
       <h1>Galerie</h1>
       <h2>
-        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat...
+       In meiner Galerie findet ihr eine Auswahl an Bildern meiner bisherigen und aktuellen Projekte. Ob mittelalterliche Gewandungen, kreative Upcycling-Ideen oder individuelle Änderungsarbeiten – jedes Stück erzählt seine eigene Geschichte. Lasst euch inspirieren von handgefertigter Kleidung, liebevoll verarbeiteten Materialien und einzigartigen Designs, die Tradition und Moderne verbinden.
        
       </h2>
 
