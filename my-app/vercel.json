@@ -14,10 +14,7 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "rewrites": [
-    {
-      "source": "/blog/:id",
-      "destination":"/index.html"
-    },
+    
     {
       "source": "/(.*)",
       "destination": "/index.html"
