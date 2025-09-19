@@ -11,7 +11,7 @@
       ]
     }
   ],
-  "framework": "react",
+  "framework": "react-router",
   "cleanUrls": true,
   "trailingSlash": false,
   "rewrites": [
