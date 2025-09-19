@@ -3,6 +3,7 @@ import './SidebarPreview.css';
 import Lightbox from "yet-another-react-lightbox";
 import { loadBlogPosts } from "./loadBlogPosts";
 import { medievalSlides, upcyclingSlides } from "./galleryData";
+import { Link } from "react-router-dom";
 
 const SidebarPreview = () => {
   const isMobile = window.innerWidth >= 768;
@@ -50,15 +51,16 @@ const SidebarPreview = () => {
             <ul>
               {posts.slice(0, 3).map(post => (
                 <li key={post.id}>
-                  <a href={`/blog/${post.id}`} className="blog-link">
+                  <Link to={`/blog/${post.id}`} className="blog-link">
                     <h3>{post.title}</h3>
-                    <p>{stripHtml(post.content).slice(0, 100)}...</p>
-                    <span>
-                      {post.date instanceof Date
-                        ? post.date.toLocaleDateString('de-DE')
-                        : post.date || 'Kein Datum'}
-                    </span>
-                  </a>
+                      <p>{stripHtml(post.content).slice(0, 100)}...</p>
+                        <span>
+                          {post.date instanceof Date
+                          ? post.date.toLocaleDateString('de-DE')
+                          : post.date || 'Kein Datum'}
+                        </span>
+                  </Link>
+
                 </li>
               ))}
             </ul>
