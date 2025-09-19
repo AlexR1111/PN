@@ -25,7 +25,7 @@ export default function BlogPreview() {
           <div className="blog-card" key={post.id}>
             <h3>{post.title}</h3>
             <p>{stripHtml(post.content).slice(0, 150)}...</p>
-            <button onClick={() => navigate(`/blog/${post.id}`)}>
+            <button onClick={() => navigate(`#/blog/${post.id}`)}>
               Weiterlesen
             </button>
           </div>
