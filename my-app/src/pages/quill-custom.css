@@ -1,0 +1,32 @@
+.ql-toolbar {
+  background-color: #fdf6f0;
+  border: 1px solid #e0cfc2;
+  border-radius: 8px;
+  font-family: 'Merriweather', serif;
+}
+
+.ql-container {
+  background-color: #fffaf5;
+  border: 1px solid #e0cfc2;
+  border-radius: 8px;
+  font-family: 'Merriweather', serif;
+  padding: 1rem;
+  min-height: 200px;
+  color: #8b3c76;
+}
+
+.ql-picker-label, .ql-picker-item {
+  color: #8b3c76;
+}
+
+.ql-toolbar button {
+  background: none;
+  border: none;
+  color: #8b3c87;
+  padding: 6px;
+  border-radius: 4px;
+}
+
+.ql-toolbar button:hover {
+  background-color: #f0e0d6;
+}

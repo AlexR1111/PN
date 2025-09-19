@@ -25,3 +25,5 @@ yarn-error.log*
 kontakt-backend/.env
 kontakt-backend/.env
 kontakt-backend/.env
+
+node_modules/

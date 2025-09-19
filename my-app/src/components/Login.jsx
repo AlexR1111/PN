@@ -4,9 +4,9 @@ import { useNavigate } from "react-router-dom";
 export default function Login() {
     const [password, setPassword] = useState ("");
     const navigate = useNavigate();
-
+    const correctPassword = process.env.REACT_APP_ADMIN;
     const handleLogin = () => {
-        if (password ==="123456") {
+        if (password === correctPassword) {
             localStorage.setItem("isAuthenticated", "true");
             navigate("/admin");
         } else {
@@ -23,7 +23,7 @@ export default function Login() {
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="Passwort eingeben"
                 />
-                <button onClick={handleLogin}Einloggen></button>
+                <button className="card" onClick={handleLogin}>Einloggen</button>
         </div>
     );
 }

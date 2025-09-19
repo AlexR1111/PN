@@ -27,7 +27,9 @@ body {
 /* ──────────────────────────────────────────────────────────────────────────
    Seitenstruktur & Überschriften
    ────────────────────────────────────────────────────────────────────────── */
-.page {
+.page ,
+.admin-page ,
+.login-page {
   padding: 5rem;
   background: linear-gradient(135deg, rgba(18,48,174,0.1), rgba(30,61,220,0.5));
   color: #fdf6e3;
@@ -446,7 +448,8 @@ h1 {
 }
 
 /* Button */
-.contact-form button {
+.contact-form button ,
+.admin-page button {
   margin: 0 auto;
   background-color: #b98c58;
   color: #fdf6e3;
@@ -459,7 +462,8 @@ h1 {
   max-width: 5rem;
 }
 
-.contact-form button:hover {
+.contact-form button:hover,
+.admin-page button:hover {
   background-color: #FFBF78;
   transform: scale(1.05);
 }
@@ -552,6 +556,17 @@ h1 {
   margin-right: 20%;
   text-shadow: 2px 2px 6px black;
 
+
+}
+
+.blog-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  max-width: 400px;
+  margin: 4rem auto 0 auto;
+  text-align: center;
 }
 
 /* ──────────────────────────────────────────────────────────────────────────

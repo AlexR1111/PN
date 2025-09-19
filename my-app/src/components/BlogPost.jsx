@@ -1,22 +1,28 @@
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { loadBlogPosts } from "./loadBlogPosts";
+import DOMPurify from 'dompurify'
 
 
 export default function BlogPost() {
     const {id} = useParams();
     const [post, setPost] = useState(null);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        async function fetchPost() {
-            const posts = await loadBlogPosts();
-            const found = posts.find(p => p.id === id);
-            setPost(found);
-        }
-        fetchPost();
+  loadBlogPosts().then(posts => {
+    const found = posts.find(p => String(p.id) === id);
+    setPost(found || null);
+    setLoading(false);
+  });
     }, [id]);
 
-    if (!post) return <p>Beitrag nicht gefunden</p>;
+    if (loading) {
+        return <div style={{minHeight:"100vh", background: "Black"}} />
+    }
+    if (!post) {
+        return <p>❌ Beitrag nicht gefunden.</p>;
+    }
 
     return (
         <div className="page">
@@ -30,11 +36,14 @@ export default function BlogPost() {
                         className="blog-image"
                         />
                 )}
-
-                <div
-                    className="content"
-                    dangerouslySetInnerHTML={{__html: post.content}
-                    }></div>
+            <div 
+                className="blog-content"
+                dangerouslySetInnerHTML={{
+                    __html: DOMPurify.sanitize(post.content)
+                }}/
+                >
+                
+                <Link to="/blog">Zurück zur Übersicht</Link>
             </div>
         </div>
     );
