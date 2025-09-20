@@ -6,12 +6,13 @@ import './quill-custom.css';
 
 export default function Admin() {
   const navigate = useNavigate();
+
   const [formData, setFormData] = useState({
     id: "",
     title: "",
     date: "",
     content: "",
-    imageUrl: [] // ← jetzt ein Array für mehrere Bilder
+    imageUrl: [] // ← Array für mehrere Bilder
   });
 
   useEffect(() => {
@@ -22,15 +23,26 @@ export default function Admin() {
   }, [navigate]);
 
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    setFormData(prev => ({
+      ...prev,
+      [e.target.name]: e.target.value
+    }));
   };
 
   const handleContentChange = (value) => {
-    setFormData({ ...formData, content: value });
+    setFormData(prev => ({
+      ...prev,
+      content: value
+    }));
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    const payload = {
+      ...formData,
+      imageUrl: formData.imageUrl.join(', ') // ← Komma-getrennte Liste
+    };
 
     try {
       const response = await fetch("https://pn-j3rm.onrender.com/api/blogposts", {
@@ -38,10 +50,7 @@ export default function Admin() {
         headers: {
           "Content-Type": "application/json"
         },
-        body: JSON.stringify({
-          ...formData,
-          imageUrl: formData.imageUrl.join(', ') 
-        })
+        body: JSON.stringify(payload)
       });
 
       if (response.ok) {
@@ -69,8 +78,8 @@ export default function Admin() {
         uploadPreset: 'blog_update',
         sources: ['local', 'url', 'camera'],
         multiple: true,
-        defaultSource: 'local',
         maxFiles: 5,
+        defaultSource: 'local',
         styles: {
           window: "#ffffff",
           sourceBg: "#f4f4f4",
@@ -89,10 +98,10 @@ export default function Admin() {
       },
       (error, result) => {
         if (!error && result.event === "success") {
-          console.log("Bild hochgeladen:", result.info.secure_url);
+          const newUrl = result.info.secure_url;
           setFormData(prev => ({
             ...prev,
-            imageUrl: [...prev.imageUrl, result.info.secure_url]
+            imageUrl: [...prev.imageUrl, newUrl]
           }));
         }
       }
@@ -105,20 +114,38 @@ export default function Admin() {
         <h2>Neuen Blogpost erstellen</h2>
         <form onSubmit={handleSubmit} className="blog-form">
           <label>ID</label>
-          <input name="id" value={formData.id} onChange={handleChange} placeholder="Nummer" required />
+          <input
+            name="id"
+            value={formData.id}
+            onChange={handleChange}
+            placeholder="Nummer"
+            required
+          />
 
           <label>Titel</label>
-          <input name="title" value={formData.title} onChange={handleChange} placeholder="Überschrift..." required />
+          <input
+            name="title"
+            value={formData.title}
+            onChange={handleChange}
+            placeholder="Überschrift..."
+            required
+          />
 
           <label>Datum</label>
-          <input name="date" type="date" value={formData.date} onChange={handleChange} required />
+          <input
+            name="date"
+            type="date"
+            value={formData.date}
+            onChange={handleChange}
+            required
+          />
 
           <label>Bilder hochladen</label>
           <button type="button" onClick={openUploadWidget}>
             Bilder auswählen
           </button>
 
-          {/* Vorschau der hochgeladenen Bilder */}
+          {/* Vorschau der Bilder */}
           <div className="image-preview">
             {formData.imageUrl.map((url, index) => (
               <img
@@ -142,10 +169,12 @@ export default function Admin() {
         </form>
       </div>
 
-      <button onClick={() => {
-        localStorage.removeItem("isAuthenticated");
-        navigate("/login");
-      }}>
+      <button
+        onClick={() => {
+          localStorage.removeItem("isAuthenticated");
+          navigate("/login");
+        }}
+      >
         Logout
       </button>
     </>
