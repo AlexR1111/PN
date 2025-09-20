@@ -12,7 +12,7 @@ export default function Admin() {
     title: "",
     date: "",
     content: "",
-    imageUrl: [] // ← Array für mehrere Bilder
+    imageUrl: [] // Array für mehrere Bilder
   });
 
   useEffect(() => {
@@ -39,9 +39,12 @@ export default function Admin() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    // Komma-getrennte Liste erzeugen
+    const imageUrlString = formData.imageUrl.join(', ');
+
     const payload = {
       ...formData,
-      imageUrl: formData.imageUrl.join(', ') // ← Komma-getrennte Liste
+      imageUrl: imageUrlString
     };
 
     try {
