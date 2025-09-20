@@ -40,7 +40,7 @@ export default function Admin() {
         },
         body: JSON.stringify({
           ...formData,
-          imageUrl: formData.imageUrl.join(', ') // ← Komma-getrennte Liste
+          imageUrl: formData.imageUrl.join(' ') 
         })
       });
 
