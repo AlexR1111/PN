@@ -83,8 +83,9 @@ export default function Admin() {
                   cloudName: 'dzlpy6osa',
                   uploadPreset: 'blog_update',
                   sources: ['local', 'url', 'camera'],
-                  multiple: false,
+                  multiple: true,
                   defaultSource: 'local',
+                  maxFiles: 5,
                   styles: {
                     window: "#ffffff",
                     sourceBg: "#f4f4f4",
