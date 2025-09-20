@@ -40,7 +40,7 @@ export default function Admin() {
         },
         body: JSON.stringify({
           ...formData,
-          imageUrl: formData.imageUrl.join(' ') 
+          imageUrl: formData.imageUrl.join(', ') 
         })
       });
 
