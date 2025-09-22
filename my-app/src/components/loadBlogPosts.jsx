@@ -12,14 +12,17 @@ export async function loadBlogPosts() {
   const cols = json.table.cols.map(col => col.label);
 
   const rows = json.table.rows.map(row => {
-    const obj = {};
-    row.c.forEach((cell, i) => {
-      const key = cols[i];
-      const value = cell?.v || "";
-      obj[key] = key === "date" ? new Date(value) : value;
-    });
-    return obj;
-  });
+  const obj = {};
+  row.c.forEach((cell, i) => {
+    const key = cols[i];
+    const value = cell?.v || "";
 
+    // Robust: Nur konvertieren, wenn es wie ein Datum aussieht
+    obj[key] = key === "date" && /^\d{4}-\d{2}-\d{2}$/.test(value)
+      ? new Date(value)
+      : value;
+  });
+  return obj;
+});
   return rows;
 }
