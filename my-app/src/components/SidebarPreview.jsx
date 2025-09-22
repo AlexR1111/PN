@@ -27,7 +27,7 @@ const SidebarPreview = () => {
 
   useEffect(() => {
     loadBlogPosts().then(loadedPosts => {
-      const sortedPosts = loadedPosts.sort((a, b) => new Date(b.date) - new Date(a.date));
+      const sortedPosts = loadedPosts.sort((a, b) => b.date - a.date);
       setPosts(sortedPosts);
     });
   }, []);
@@ -58,9 +58,7 @@ const SidebarPreview = () => {
                     <h3>{post.title}</h3>
                       <p>{stripHtml(post.content).slice(0, 100)}...</p>
                         <span>
-                          {post.date instanceof Date
-                          ? post.date.toLocaleDateString('de-DE')
-                          : post.date || 'Kein Datum'}
+                          {post.date.toLocaleDateString('de-DE')}
                         </span>
                   </Link>
 

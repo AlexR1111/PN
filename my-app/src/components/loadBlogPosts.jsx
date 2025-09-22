@@ -10,10 +10,13 @@ export async function loadBlogPosts() {
   const json = JSON.parse(text.substr(47).slice(0, -2));
 
   const cols = json.table.cols.map(col => col.label);
+
   const rows = json.table.rows.map(row => {
     const obj = {};
     row.c.forEach((cell, i) => {
-      obj[cols[i]] = cell?.v || "";
+      const key = cols[i];
+      const value = cell?.v || "";
+      obj[key] = key === "date" ? new Date(value) : value;
     });
     return obj;
   });
