@@ -6,7 +6,7 @@ export async function loadBlogPosts() {
   const res = await fetch(url);
   const text = await res.text();
 
-  // gviz liefert kein reines JSON → wir schneiden es zurecht
+  
   const json = JSON.parse(text.substr(47).slice(0, -2));
 
   const cols = json.table.cols.map(col => col.label);
@@ -17,10 +17,12 @@ export async function loadBlogPosts() {
     const key = cols[i];
     const value = cell?.v || "";
 
-    // Robust: Nur konvertieren, wenn es wie ein Datum aussieht
-    obj[key] = key === "date" && /^\d{4}-\d{2}-\d{2}$/.test(value)
-      ? new Date(value)
-      : value;
+    
+    if (key === "date" && /^\d{4}-\d{2}-\d{2}$/.test(value)) {
+      onj[key] = new Date(value);
+    } else {
+      obj[key] = value;
+    }
   });
   return obj;
 });
