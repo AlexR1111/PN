@@ -27,7 +27,8 @@ const SidebarPreview = () => {
 
   useEffect(() => {
     loadBlogPosts().then(loadedPosts => {
-      const sortedPosts = loadedPosts.sort((a, b) => b.date - a.date);
+      console.log9("Geladene Posts:", loadedPosts)
+      const sortedPosts = loadedPosts.sort((a, b) => new Date(b.date) - new Date (a.date));
       setPosts(sortedPosts);
     });
   }, []);
