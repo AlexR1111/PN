@@ -36,7 +36,12 @@ const Blog = () => {
           posts.map(post => (
             <div key={post.id} className="blog-card">
               <h2>{post.title}</h2>
-              <p className="date-blog">{post.date}</p>
+              <p className="date-blog">
+                {post.date instanceof Date && !isNaN(post.date)
+                  ? post.date.toLocaleDateString('de-DE')
+                  : 'Kein Datum'}
+            </p> // ✅
+
               <p>{stripHtml(post.content).slice(0, 120) || "Kein Inhalt verfügbar."}...</p>
               <Link to={`/blog/${post.id}`}>Beitrag lesen</Link>
             </div>
