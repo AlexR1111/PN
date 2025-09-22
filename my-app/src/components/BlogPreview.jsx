@@ -7,8 +7,17 @@ export default function BlogPreview() {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    loadBlogPosts().then(setPosts);
-  }, []);
+  loadBlogPosts().then(loadedPosts => {
+    const formatted = loadedPosts.map(post => ({
+      ...post,
+      date: post.date instanceof Date && !isNaN(post.date)
+        ? post.date.toLocaleDateString('de-DE')
+        : 'Kein Datum'
+    }));
+    setPosts(formatted);
+  });
+}, []);
+
 
   function stripHtml(html) {
     const doc = new DOMParser().parseFromString(html, "text/html");
