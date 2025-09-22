@@ -24,7 +24,7 @@ export default function BlogPost() {
     return <p>❌ Beitrag nicht gefunden.</p>;
   }
 
-  // 🔧 Bild-URLs aufteilen
+  
   const imageUrls = post.imageUrl
     ? post.imageUrl.split(',').map(url => url.trim()).filter(Boolean)
     : [];
@@ -33,9 +33,12 @@ export default function BlogPost() {
     <div className="page">
       <div className="blog-frame">
         <h1>{post.title}</h1>
-        <p className="date">{post.date}</p>
-
-        {/* 🔧 Alle Bilder einzeln anzeigen */}
+        <p className="date">
+          {post.date instanceof Date && !isNaN(post.date)
+          ? post.date.toLocaleDateString('de-DE')
+          : 'Kein Datum'}
+        </p>
+        
         {imageUrls.length > 0 && (
           <div className="blog-images">
             {imageUrls.map((url, index) => (
