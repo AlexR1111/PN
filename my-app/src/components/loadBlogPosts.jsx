@@ -17,9 +17,15 @@ export async function loadBlogPosts() {
     const key = cols[i];
     const value = cell?.v || "";
 
-    
-    if (key === "date" && /^\d{4}-\d{2}-\d{2}$/.test(value)) {
-      obj[key] = new Date(value);
+    if (key === "date" && typeof value === "string" && value.startsWith("Date(")) {
+      // Extrahiere Jahr, Monat, Tag
+      const match = value.match(/Date\((\d+),(\d+),(\d+)\)/);
+      if (match) {
+        const [_, year, month, day] = match;
+        obj[key] = new Date(Number(year), Number(month), Number(day));
+      } else {
+        obj[key] = null;
+      }
     } else {
       obj[key] = value;
     }
