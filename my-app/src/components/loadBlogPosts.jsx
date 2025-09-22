@@ -19,7 +19,7 @@ export async function loadBlogPosts() {
 
     
     if (key === "date" && /^\d{4}-\d{2}-\d{2}$/.test(value)) {
-      onj[key] = new Date(value);
+      obj[key] = new Date(value);
     } else {
       obj[key] = value;
     }
