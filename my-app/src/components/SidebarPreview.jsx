@@ -10,7 +10,7 @@ const SidebarPreview = () => {
   const [collapsed, setCollapsed] = useState(isMobile);
   const [posts, setPosts] = useState([]);
 
-  const allImages = [...medievalSlides, ...upcyclingSlides].slice(0, 3);
+  const allImages = [...medievalSlides, ...upcyclingSlides].reverse().slice(0, 3);
   const slides = allImages.map(img => ({
     src: img.src,
     title: img.title,
@@ -26,7 +26,10 @@ const SidebarPreview = () => {
   };
 
   useEffect(() => {
-    loadBlogPosts().then(setPosts);
+    loadBlogPosts().then(loadedPosts => {
+      const sortedPosts = loadedPosts.sort((a, b) => new Date(b.date) - new Date(a.date));
+      setPosts(sortedPosts);
+    });
   }, []);
 
   // HTML entfernen für Vorschau
