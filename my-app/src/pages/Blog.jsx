@@ -40,7 +40,7 @@ const Blog = () => {
                 {post.date instanceof Date && !isNaN(post.date)
                   ? post.date.toLocaleDateString('de-DE')
                   : 'Kein Datum'}
-            </p> // ✅
+            </p>
 
               <p>{stripHtml(post.content).slice(0, 120) || "Kein Inhalt verfügbar."}...</p>
               <Link to={`/blog/${post.id}`}>Beitrag lesen</Link>
