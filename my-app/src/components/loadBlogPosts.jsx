@@ -12,25 +12,32 @@ export async function loadBlogPosts() {
   const cols = json.table.cols.map(col => col.label);
 
   const rows = json.table.rows.map(row => {
-  const obj = {};
-  row.c.forEach((cell, i) => {
-    const key = cols[i];
-    const value = cell?.v || "";
+    const obj = {};
+    row.c.forEach((cell, i) => {
+      const key = cols[i];
+      const value = cell?.v || "";
 
-    if (key === "date" && typeof value === "string" && value.startsWith("Date(")) {
-      // Extrahiere Jahr, Monat, Tag
-      const match = value.match(/Date\((\d+),(\d+),(\d+)\)/);
-      if (match) {
-        const [_, year, month, day] = match;
-        obj[key] = new Date(Number(year), Number(month), Number(day));
+      if (key === "date") {
+        if (typeof value === "string" && value.startsWith("Date(")) {
+          const match = value.match(/Date\((\d+),(\d+),(\d+)\)/);
+          if (match) {
+            const [_, year, month, day] = match;
+            obj[key] = new Date(Number(year), Number(month), Number(day));
+          } else {
+            obj[key] = null;
+          }
+        } else if (typeof value === "string" && /^\d{4}-\d{2}-\d{2}$/.test(value)) {
+          obj[key] = new Date(value); // ISO-Format
+        } else if (value instanceof Date) {
+          obj[key] = value;
+        } else {
+          obj[key] = null;
+        }
       } else {
-        obj[key] = null;
+        obj[key] = value;
       }
-    } else {
-      obj[key] = value;
-    }
+    });
+    return obj;
   });
-  return obj;
-});
   return rows;
 }
