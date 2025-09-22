@@ -59,14 +59,11 @@ const SidebarPreview = () => {
                     <h3>{post.title}</h3>
                       <p>{stripHtml(post.content).slice(0, 100)}...</p>
                         <span>
-                          {post.date && typeof post.date === 'object' && post.date.toLocaleDateString
+                          {post.date instanceof Date && !isNaN(post.date)
                             ? post.date.toLocaleDateString('de-DE')
                             : 'Kein Datum'}
                           </span>
-
-
                   </Link>
-
                 </li>
               ))}
             </ul>
