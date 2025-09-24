@@ -73,8 +73,8 @@ export const upcyclingSlides = [
 
 
 export const customSlides = [
-  {src:'https://res.cloudinary.com/dzlpy6osa/image/upload/Collage_2025-09-11_16_29_57_pbfe32',
-    title: 'test',
-    description: 'test test'
+  {src:'https://res.cloudinary.com/dzlpy6osa/image/upload/Brautpaar_dqthkg',
+    title: 'Änderungen für das Brautpaar',
+    description: 'Das Kleid musste um 6 Zentimeter weiter werden. Um den Stil zu erhalten, habe ich den seitlichen Reißverschluss nach hinten in die Mitte verlegt und aus dem Stoff, der rückwärtig übrig war, seitlich je 3 Zentimeter erfolgreich eingefügt. Beim Bräutigam waren die Hosen zu lang und das Hemd an der Schulter zu breit. Beides habe ich erfolgreich umgesetzt.'
   },
 ]

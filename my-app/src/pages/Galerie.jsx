@@ -55,7 +55,7 @@ const Galerie = () => {
             className={theme === 'custom' ? 'active' : ''}
             onClick={() => setTheme('custom')}
             >
-            Änderungen und Sonstiges
+            Maßanpassung & Änderungen
             </button>
         </div>
 
@@ -101,7 +101,7 @@ const Galerie = () => {
           {theme === 'custom' && (
             <div>
               <p className='gallery-text'>
-                text text text text text und text.
+                Passgenau mit Persönlichkeit: <br /><br /> In dieser Rubrik dreht sich alles um individuelle Anpassungen, liebevolle Änderungen und handwerkliche Veredelung. Ob ein Kleid, das besser sitzen soll, eine Jacke mit neuer Länge oder ein Lieblingsstück, das repariert werden möchte – hier entstehen Lösungen, die nicht nur passen, sondern auch begeistern. Mit Fingerspitzengefühl und einem Auge fürs Detail wird jedes Stück zu einem Ausdruck deiner Persönlichkeit.
               </p>
               <div className="gallery-grid">
                 {customSlides.map((slide,i) => (
