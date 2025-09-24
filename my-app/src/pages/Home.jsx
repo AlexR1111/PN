@@ -16,7 +16,7 @@ const Home = () => (
         <p>Ob historische Gewandung oder moderne Upcycling-Ideen – ich verwandle Stoffe in individuelle Lieblingsstücke. Änderungswünsche? Kein Problem – ich passe alles nach deinen Vorstellungen an.</p>
         <VorschauKarten/>
         <SidebarPreview/>
-        <p>Bei mir gibt es von Hand gefertigte und bestickte Gewandungen nach
+        <p className="aboutetext">Bei mir gibt es von Hand gefertigte und bestickte Gewandungen nach
         Wunsch des Kunden vom Mittelalter bis zur Renaissance, für Fantasy und
         Rollenspiel.
 

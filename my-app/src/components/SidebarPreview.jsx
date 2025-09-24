@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import './SidebarPreview.css';
 import Lightbox from "yet-another-react-lightbox";
 import { loadBlogPosts } from "./loadBlogPosts";
-import { medievalSlides, upcyclingSlides } from "./galleryData";
+import { customSlides, medievalSlides, upcyclingSlides } from "./galleryData";
 import { Link } from "react-router-dom";
 
 const SidebarPreview = () => {
@@ -10,7 +10,7 @@ const SidebarPreview = () => {
   const [collapsed, setCollapsed] = useState(isMobile);
   const [posts, setPosts] = useState([]);
 
-  const allImages = [...medievalSlides, ...upcyclingSlides].reverse().slice(0, 3);
+  const allImages = [...medievalSlides, ...upcyclingSlides, ...customSlides].reverse().slice(0, 3);
   const slides = allImages.map(img => ({
     src: img.src,
     title: img.title,

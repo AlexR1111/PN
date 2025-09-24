@@ -1,10 +1,10 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { medievalSlides, upcyclingSlides } from "./galleryData";
+import { customSlides, medievalSlides, upcyclingSlides } from "./galleryData";
 
 export default function GallerySidebarPreview() {
   const navigate = useNavigate();
-  const previewImages = [...medievalSlides.slice(0, 3), ...upcyclingSlides.slice(0, 3)];
+  const previewImages = [...medievalSlides.slice(0, 2), ...upcyclingSlides.slice(0, 2), ...customSlides.slice(0, 2)];
 
   return (
     <section
