@@ -41,14 +41,36 @@
     min-width: 2px;
     overflow: hidden;
     transition: width 0.3s;
-}}
+    visibility: hidden;
+}
+.sidebar-toggle-btn {
+    position: fixed;
+    top: 10px;
+    right: 5px;
+    z-index: 1001;
+    font-size: xx-small;
+    padding: 2px;
+    visibility: visible;
+}
+}
 
 @media (max-width: 425px) {
     .sidebar-preview.collapsed {
-    width: 0.1rem;
+    width: 1px;
     min-width: 0px;
-    overflow: hidden;
-    transition: width 0.3s;
+    visibility: hidden;
+    
+    
+}
+
+.sidebar-toggle-btn {
+    position: fixed;
+    top: 10px;
+    right: 5px;
+    z-index: 1001;
+    font-size: xx-small;
+    padding: 2px;
+    visibility: visible;
 }
     
 }
