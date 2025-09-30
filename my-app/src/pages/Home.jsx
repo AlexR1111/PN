@@ -12,7 +12,7 @@ const Home = () => (
         exit={{opacity: 0, y: -30}}
         transition={{duration: 0.5, ease: "easeInOut"}}
         >
-        <h1>Herzlich Willkommen</h1>
+        <h1>Herzlich willkommen</h1>
         <p>Ob historische Gewandung oder moderne Upcycling-Ideen – ich verwandle Stoffe in individuelle Lieblingsstücke. Änderungswünsche? Kein Problem – ich passe alles nach deinen Vorstellungen an.</p>
         <VorschauKarten/>
         <SidebarPreview/>
