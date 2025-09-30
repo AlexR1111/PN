@@ -29,7 +29,7 @@ function VorschauKarten() {
         {
             title:'Kontakt',
             image: kontaktBild,
-            description:'Ich freuche mich auf deine Nachricht!',
+            description:'Ich freue mich auf deine Nachricht!',
             link:'/kontakt',
         },
     ];
